@@ -59,6 +59,12 @@ body{
     font-size: 10px;
 }
 
+ a:hover{
+    cursor: pointer;
+    background-color:lightgrey;
+}
+
+
 .VHS{
     position: fixed;
     right: 30px;
@@ -66,3 +72,4 @@ body{
     color: aliceblue;
     font-size: 20px;
 }
+
