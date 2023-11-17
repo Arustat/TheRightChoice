@@ -1,0 +1,27 @@
+@font-face {
+    font-family: "VCR OSD Mono";
+    src: url("//works.rocheclement.fr/portraitchinois/fonts/VCR.ttf");
+}
+
+
+
+.Title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: aliceblue;
+    font-weight: normal;
+}
+
+body{
+    font-family: "VCR OSD Mono";
+    background-color:black;
+    color:lightgrey;
+    overflow:hidden;
+    background-image: url("https://68.media.tumblr.com/595a5fa01fe53ca0e4ca8f37bacc849d/tumblr_nve67mJtue1tanofjo1_500.gif");
+      background-size:cover;
+    margin:0;
+    text-shadow: black 2px 2px 1px, black -2px 2px 1px, black -2px -2px 1px, black 2px -2px 1px, black 0px 2px 1px, black 0px -2px 1px, black 2px 0px 1px, black -2px 0px 1px;
+    
+}
