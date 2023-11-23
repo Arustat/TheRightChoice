@@ -1,3 +1,8 @@
+@font-face {
+  font-family: "VCR OSD Mono";
+  src: url("file:///C:/Users/PC/Documents/Ynov/TheRightChoice/TheRightChoice/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf");
+}
+
 body{
     font-family: "VCR OSD Mono";
     background-color:black;
@@ -17,11 +22,13 @@ body{
   transition: .3s ease-in-out;
   width: 400px;  /* Définir la largeur */
   height: 300px; /* Définir la hauteur */
+  border-radius: 10px;
 }
 
 .zoom :hover img {
   -webkit-transform: scale(1.2);
   transform: scale(1.2);
+  background-image: url("https://giphy.com/embed/11v8gJRwB2fE3u");
 }
 
 .zoom {
@@ -41,4 +48,20 @@ body{
   bottom: 10px;
   color: aliceblue;
   font-size: 20px;
+}
+.VHS{
+  position: fixed;
+  right: 30px;
+  top: 0px;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+
+.music {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
 }
