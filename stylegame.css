@@ -10,48 +10,35 @@ body{
     
 }
 
-.zoom img {  
+.zoom img { 
   -webkit-transform: scale(1);
-	transform: scale(1);
-	-webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  width: 400px;  /* Définir la largeur */
+  height: 300px; /* Définir la hauteur */
 }
+
 .zoom :hover img {
-	-webkit-transform: scale(1.3);
-	transform: scale(1.3);
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
 }
 
 .zoom {
   display: flex;
-  justify-content: space-between; /* Espace entre les images */
+  flex-direction: row; /* Modifier à 'row' pour aligner horizontalement */
+  align-items: center;
 }
 
-.zoom img {
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  margin: 0 10px;
+.zoom img{
+  margin-right: 20px;
   margin-top: 40px;
+  margin-left: 80px;
 }
-/* Le reste de ton CSS reste inchangé, je vais juste ajuster le conteneur pour les images */
-
-.zoom {
-  display: flex;
-  flex-direction: column; /* Dispose les images en colonnes */
-  align-items: center; /* Centre les éléments horizontalement */
-}
-
-.row {
-  display: flex;
-  justify-content: center; /* Centre les images horizontalement dans chaque ligne */
-}
-
-.row > div {
-  margin: 10px; /* Espace autour de chaque image */
-}
-
-.zoom img {
-  width: 400px;
-  height: 300px;
-  object-fit: cover;
+.calendar{
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  color: aliceblue;
+  font-size: 20px;
 }
