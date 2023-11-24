@@ -1,28 +1,17 @@
-var music = new Audio('Music/sound.mp3');
-var playButton = document.getElementById('playButton');
+var audio = new Audio('Music/sound.mp3');
 
 function playMusic() {
-  if (typeof music.loop == 'boolean') {
-    music.loop = true;
-  } else {
-    music.addEventListener('ended', function () {
-      this.currentTime = 0;
-      this.play();
-    }, false);
-  }
-  music.play();
-  playButton.src = 'Music/volume.png';
-}
-
-function pauseMusic() {
-  music.pause();
-  playButton.src = 'Music/mute.png';
+  audio.play();
 }
 
 function toggleMusic() {
-  if (music.paused) {
-    playMusic();
+  var musicImage = document.getElementById('musicImage');
+
+  if(audio.paused) {
+    audio.play();
+    musicImage.src = "Music/volume.png"; // Image lorsque la musique joue
   } else {
-    pauseMusic();
+    audio.pause();
+    musicImage.src = "Music/mute.png"; // Image lorsque la musique est en pause
   }
 }
