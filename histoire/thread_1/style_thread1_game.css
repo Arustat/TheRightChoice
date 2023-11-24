@@ -1,0 +1,33 @@
+@font-face {
+    font-family: "VCR OSD Mono";
+    src: url('../../typos/typo.ttf');
+}
+
+body{
+    font-family: "VCR OSD Mono";
+    background-color:black;
+    color:lightgrey;
+    overflow:hidden;
+    background-image: url("https://68.media.tumblr.com/595a5fa01fe53ca0e4ca8f37bacc849d/tumblr_nve67mJtue1tanofjo1_500.gif");
+    background-size:cover;
+    background-size: 100%;
+    background-position: center;
+    margin:0;
+    text-shadow: black 2px 2px 1px, black -2px 2px 1px, black -2px -2px 1px, black 2px -2px 1px, black 0px 2px 1px, black 0px -2px 1px, black 2px 0px 1px, black -2px 0px 1px;    
+}
+
+.exit a {
+    color: aliceblue;
+}
+
+.exit {
+    position: absolute;
+    margin-top: 15px;
+    margin-left: 20px;
+    font-size: 30px;
+}
+
+.exit a:hover {
+    background-color: rgb(255, 255, 255);
+    opacity: 1;
+}
