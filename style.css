@@ -1,6 +1,6 @@
 @font-face {
     font-family: "VCR OSD Mono";
-    src: url("file:///C:/Users/PC/Documents/Ynov/TheRightChoice/TheRightChoice/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf");
+    src: url('typos/typo.ttf');
 }
 
 .conteneur {
