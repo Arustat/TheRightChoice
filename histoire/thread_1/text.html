@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Story</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #story {
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+<div id="story">
+    <p id="story-text">Bienvenue dans cette aventure passionnante...</p>
+</div>
+
+<button onclick="makeChoice(1)">Choix 1</button>
+<button onclick="makeChoice(2)">Choix 2</button>
+<button onclick="makeChoice(3)">Choix 3</button>
+
+<script>
+    let storyTextElement = document.getElementById('story-text');
+    let choiceButtons = document.querySelectorAll('button');
+
+    function makeChoice(choiceNumber) {
+        switch (choiceNumber) {
+            case 1:
+                updateStory("Vous avez choisi le chemin 1. C'est une route cahoteuse.");
+                displayChoices(["Explorer la forêt", "Prendre le pont suspendu"]);
+                break;
+            case 2:
+                updateStory("Vous avez choisi le chemin 2. C'est un sentier paisible.");
+                displayChoices(["Visiter le village", "Traverser le désert"]);
+                break;
+            case 3:
+                updateStory("Vous avez choisi le chemin 3. C'est une voie secrète.");
+                displayChoices(["Descendre dans la grotte", "Escalader la montagne"]);
+                break;
+        }
+    }
+
+    function updateStory(newText) {
+        storyTextElement.textContent = newText;
+    }
+
+    function displayChoices(choices) {
+        for (let i = 0; i < choiceButtons.length; i++) {
+            if (i < choices.length) {
+                choiceButtons[i].style.display = 'inline-block';
+                choiceButtons[i].textContent = choices[i];
+            } else {
+                choiceButtons[i].style.display = 'none';
+            }
+        }
+    }
+</script>
+
+</body>
+</html>
