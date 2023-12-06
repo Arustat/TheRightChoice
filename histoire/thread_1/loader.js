@@ -15,7 +15,7 @@ function affiche(texte) {
             document.querySelector('.background').style.display = 'block';
             let video = document.getElementById('video');
             video.addEventListener('ended', () => {
-                window.location.href = 'mail_intro.html';
+                window.location.href = 'mail.html';
             });
         },1000);
     }
