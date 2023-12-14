@@ -66,15 +66,22 @@ body{
   height: 40px;
 }
 
-.image {
+.image_1 {
   transition: transform 40s ease-in-out;
   transform-origin: center center;
   z-index: 1;
 }
 
-.image.agrandie {
+.image_1.agrandie {
   transform: scale(1.2);
   width: 100vw;
   height: 100vh;
   z-index: 9999;
+}
+
+
+.image_2 {
+  transition: transform 40s ease-in-out;
+  transform-origin: center center;
+  z-index: 1;
 }

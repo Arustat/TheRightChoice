@@ -7,3 +7,4 @@ function agrandir(nomdiv, thread) {
       window.location.href = 'histoire/' + nomdiv  + '/'+ thread;
     }, 2000);
 }
+
