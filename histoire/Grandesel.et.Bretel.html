@@ -29,50 +29,46 @@
 
     <div id="Texte">
         <p id="Texte_affiché">Bonjour. Je vais vous raconter l'histoire de Grandesel et Bretel. Tu connais ?</p>
-        <button id="1"></button>         <button id="2"></button>
+        <button id="Oui" title="Oui ?">Oui</button>         
+        <button id="Non" title="Non ?">Non</button>
     </div>
     <script>
-
+        // Textes de l'arborescence
+        var T1 = "Bonjour. Je vais vous raconter l'histoire de Grandesel et Bretel. Tu connais ?";
+        var T2 = "Peu importe. Ils se baladaient sur Internet, tout comme toi.";
+        var T3 = "Ils voulaient satisfaire leur soif de curiosité, tout comme toi.";
+        var T31 = "Si tu es curieux, oui.";
+        var T311 = "Parce que ceci. Bien cordialement, à bientôt pour une nouvelle histoire.";
+        var T312 = "Bien mon enfant. Mais se n'est pas fini.";
+        var T3121 = "Maintenant on peut se dire aurevoir. à bientôt pour une nouvelle histoire.";
+        var T32 = "Tu n'aimeras pas le troisième.";
+        var T321 = "Ah ? très bien ... Alors bon vent.";
+        var T3211 = "à bientôt pour une nouvelle histoire.";
+        var T322 = "Oh non... dix excuses-moi, cent désolé, et mille pardons.";
+        var T3221 = "... et mes condoléances.";
+        var T32211 = "Pour le troisième point commun. à bientôt pour une nouvelle histoire.";
         // Fonction d'affichage
         function CreepyMonitor(T) {
-        // Textes de l'arborescence
-        let T1 = "Bonjour. Je vais vous raconter l'histoire de Grandesel et Bretel. Tu connais ?";
-        let T2 = "Peu importe. Ils se baladaient sur Internet, tout comme toi.";
-        let T3 = "Ils voulaient satisfaire leur soif de curiosité, tout comme toi.";
-        let T31 = "Si tu es curieux, oui.";
-        let T311 = "Parce que ceci. Bien cordialement, à bientôt pour une nouvelle histoire.";
-        let T312 = "Bien mon enfant. Mais se n'est pas fini.";
-        let T3121 = "Maintenant on peut se dire aurevoir. à bientôt pour une nouvelle histoire.";
-        let T32 = "Tu n'aimeras pas le troisième.";
-        let T321 = "Ah ? très bien ... Alors bon vent.";
-        let T3211 = "à bientôt pour une nouvelle histoire.";
-        let T322 = "Oh non... dix excuses-moi, cent désolé, et mille pardons.";
-        let T3221 = "... et mes condoléances.";
-        let T32211 = "Pour le troisième point commun. à bientôt pour une nouvelle histoire.";
         document.getElementById("Texte_affiché").innerHTML = T;
+        
         }
 
-        
-
-
-
         // Arborescence
-        function CreepyMonitor(T1) {
-            <button id="1"></button> = <button id="Oui" title="Oui ?">"Oui"</button>; <button id="2"></button> = <button id="Non" title="Non ?">"Non"</button>
+            document.getElementById("Oui").addEventListener("click", Oui) {
+                CreepyMonitor(T2) {}
             }
-            oui = document.getElementById("Oui").addEventListener("click", Oui)
-            non = document.getElementById("Non").addEventListener("click", Non)
+
+            document.getElementById("Non").addEventListener("click", Non)
 
             if (oui || non) {
-                function CreepyMonitor(T2) { }
-                <button id="1"></button> = <button id="Ah ..." title="Ah! Ah! à la qu.. Pardon.">"Ah ..."</button> ; <button id="2"></button> = <button id="Chouette" title="T'es un (e) bon (nne)">"Oui"</button>
-                Ah = document.getElementById("Ah ...").addEventListener("click", Ah);
-                Chouette = document.getElementById("Chouette ! Un point commun !").addEventListener("click", Chouette);
-
+                function CreepyMonitor(T2) {} <button id="1"></button> = <button id="Ah" title="Ah! Ah! à la qu.. Pardon.">Ah ...</button> ; <button id="2"></button> = <button id="Chouette" title="T'es un (e) bon (nne)">Chouette ! Un point commun !</button>
+                Ah = document.getElementById("Ah").addEventListener("click", Ah);
+                Chouette = document.getElementById(Chouette).addEventListener("click", Chouette);
+            }
                 if (Ah || Chouette) {
 
                     function CreepyMonitor(T3) {
-                        <button id="1"></button> = <button id="... dois-je m'inquiéter ?" title="Tu commence à douter">... dois-je m'inquiéter ?</button> ; <button id="2"></button> = <button id="Houra ! Un deuième point commun !" title="Je te sens chaud(e)">Houra ! Un deuième point commun !</button>
+                    <button id="1"></button> = <button id="... dois-je m'inquiéter ?" title="Tu commence à douter">... dois-je m'inquiéter ?</button> ; <button id="2"></button> = <button id="Houra ! Un deuième point commun !" title="Je te sens chaud(e)">Houra ! Un deuième point commun !</button>
                     inquiéter = document.getElementById("... dois-je m'inquiéter ?").addEventListener("click", inquiéter);
                     Houra = document.getElementById("Houra ! Un deuième point commun !").addEventListener("click", Houra);
 
@@ -128,6 +124,6 @@
                                                     function CreepyMonitor(T32211) {
                                     }
                              {
-                            }
+                }
                             
     </script>
