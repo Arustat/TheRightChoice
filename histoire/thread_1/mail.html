@@ -8,10 +8,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-<script>
-  alert("Vous avez reçu un mail");
-  document.body.style.background = black;
-</script>
 <div class="container">
   <div class="sidebar">
     <div class="user">
@@ -168,10 +164,10 @@
   function clue() {
     var input = document.getElementById("search").value;
     if (input === "help_joahn@1976.com") {
-        alert("Vous avez trouvé un indice");
         const fakeData = "Contenu du fichier fictif";
         const fakeFileName = "/indice_enquête/rapport_enquete.zip";
-        downloadFile(fakeData, fakeFileName, 'zip/plain');
+        downlo
+        adFile(fakeData, fakeFileName, 'zip/plain');
     }
 }
 
