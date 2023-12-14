@@ -66,3 +66,11 @@ body{
     color: aliceblue;
     font-size: 20px;
 }
+
+.credit{
+    position: fixed;
+    left: 50%;
+    top: 15px;
+    color: aliceblue;
+    font-size: 10px;
+}
