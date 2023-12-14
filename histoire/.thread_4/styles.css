@@ -25,7 +25,8 @@ body{
     background-size:cover;
     margin:0;
     text-shadow: black 2px 2px 1px, black -2px 2px 1px, black -2px -2px 1px, black 2px -2px 1px, black 0px 2px 1px, black 0px -2px 1px, black 2px 0px 1px, black -2px 0px 1px;
-    
+    opacity: 0;
+    transition: opacity 2s ease-out;
 }
 
 #story-text {
@@ -67,4 +68,8 @@ a {
     display: inline-block;
     vertical-align: bottom;
     white-space: nowrap;
+}
+@keyframes typingAnimation {
+    from { width: 0; }
+    to { width: 100%; }
 }
