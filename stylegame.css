@@ -1,0 +1,80 @@
+@font-face {
+  font-family: "VCR OSD Mono";
+  src: url('typos/typo.ttf');
+}
+
+body{
+    font-family: "VCR OSD Mono";
+    background-color:black;
+    color:lightgrey;
+    overflow:hidden;
+    background-image: url("https://68.media.tumblr.com/595a5fa01fe53ca0e4ca8f37bacc849d/tumblr_nve67mJtue1tanofjo1_500.gif");
+      background-size:cover;
+    margin:0;
+    text-shadow: black 2px 2px 1px, black -2px 2px 1px, black -2px -2px 1px, black 2px -2px 1px, black 0px 2px 1px, black 0px -2px 1px, black 2px 0px 1px, black -2px 0px 1px;
+    
+}
+
+.zoom img { 
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: .3s ease-in-out;
+  transition: .3s ease-in-out;
+  width: 400px;  /* Définir la largeur */
+  height: 300px; /* Définir la hauteur */
+  border-radius: 10px;
+}
+
+.zoom :hover img {
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+  background-image: url("https://giphy.com/embed/11v8gJRwB2fE3u");
+}
+
+.zoom {
+  display: flex;
+  flex-direction: row; /* Modifier à 'row' pour aligner horizontalement */
+  align-items: center;
+}
+
+.zoom img{
+  margin-right: 20px;
+  margin-top: 40px;
+  margin-left: 80px;
+}
+.calendar{
+  position: fixed;
+  left: 10px;
+  bottom: 10px;
+  color: aliceblue;
+  font-size: 20px;
+}
+.VHS{
+  position: fixed;
+  right: 30px;
+  top: 0px;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+
+.music {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.image {
+  transition: transform 40s ease-in-out;
+  transform-origin: center center;
+  z-index: 1;
+}
+
+.image.agrandie {
+  transform: scale(1.2);
+  width: 100vw;
+  height: 100vh;
+  z-index: 9999;
+}
