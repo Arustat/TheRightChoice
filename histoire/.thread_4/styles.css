@@ -25,7 +25,8 @@ body{
     background-size:cover;
     margin:0;
     text-shadow: black 2px 2px 1px, black -2px 2px 1px, black -2px -2px 1px, black 2px -2px 1px, black 0px 2px 1px, black 0px -2px 1px, black 2px 0px 1px, black -2px 0px 1px;
-    
+    opacity: 0;
+    transition: opacity 2s ease-out;
 }
 
 #story-text {
@@ -45,11 +46,30 @@ a {
 #next-button {
     text-align: fixed;
     cursor: pointer;
-    font-size: 30px;
+    font-size: 20px;
     margin-top: 50px;
 
     border: 1px solid #c9e3ff;
     border-radius: 3px;
     display: inline-block;
     padding: 10px 20px;
+}
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease-out;
+}
+
+.fade-in {
+    opacity: 1;
+    transition: opacity 0.5s ease-in; 
+}
+.typing {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: bottom;
+    white-space: nowrap;
+}
+@keyframes typingAnimation {
+    from { width: 0; }
+    to { width: 100%; }
 }
