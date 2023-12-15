@@ -170,10 +170,13 @@ function game(){
     prompt.innerHTML += "<br>";
     prompt.innerHTML += "<br>";
     index = 0;
-    affichage(desc2)},desc1.length *60 + 100);
+    affichage(desc2)},desc1.length *55 + 100);
 
-    document.getElementById("btn 3").className = "btn btn-primary button1";
-    btn3.innerHTML = dial1Mc;
+    setTimeout(function() {
+      document.getElementById("prompt").className = "hide";
+      document.getElementById("btn3").className = "btn btn-primary button1";
+      document.getElementById("btn3").innerHTML = dial1Mc;
+  }, desc2.length + desc1.length * 80 + 100);
 
   
   btn3.addEventListener("click", function(){
