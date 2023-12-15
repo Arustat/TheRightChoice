@@ -1,6 +1,6 @@
 @font-face {
     font-family: "VCR OSD Mono";
-    src: url("file:///C:/Users/PC/Documents/Ynov/TheRightChoice/TheRightChoice/vcr_osd_mono/VCR_OSD_MONO_1.001.ttf");
+    src: url('typos/typo.ttf');
 }
 
 .conteneur {
@@ -59,6 +59,12 @@ body{
     font-size: 10px;
 }
 
+ a:hover{
+    cursor: pointer;
+    background-color:lightgrey;
+}
+
+
 .VHS{
     position: fixed;
     right: 30px;
@@ -69,8 +75,8 @@ body{
 
 .credit{
     position: fixed;
-    left: 50%;
-    top: 15px;
+    left: 500px;
+    top: 500px;
     color: aliceblue;
     font-size: 10px;
 }
