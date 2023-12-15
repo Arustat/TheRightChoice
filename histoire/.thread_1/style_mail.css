@@ -9,6 +9,7 @@ body::before{
     z-index: 1;
     opacity: 1;
     animation: fadeout 3s ease-in-out 1s forwards;
+    pointer-events: none;
 }
 
 @keyframes fadeout {
@@ -21,6 +22,9 @@ body::before{
     100% {
         opacity: 0;
     }
+}
+body.animation-finished::before {
+    display: none; /* Supprime l'élément après l'animation */
 }
 body{
     font-family: Arial, sans-serif;

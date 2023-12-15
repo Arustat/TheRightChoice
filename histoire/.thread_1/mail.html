@@ -153,6 +153,14 @@
     
 </div>
 <script>
+  // Récupérer l'élément body
+const body = document.querySelector('body');
+
+// Dès que l'animation est terminée, ajouter la classe 'animation-finished' à body
+document.querySelector('body::before').addEventListener('animationend', function() {
+    body.classList.add('animation-finished');
+});
+
   function openEmail(element) {
     const emailContent = document.querySelector('.email-content');
     emailContent.style.display = (emailContent.style.display === 'none') ? 'block' : 'none';
