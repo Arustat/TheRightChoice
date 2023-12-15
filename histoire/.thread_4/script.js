@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextButton = document.getElementById('next-button');
 
     const stories = [
-        "Ceci est le premier texte de l'histoire.",
+        "Ça y est, c'est le grand jour ! Aujourd'hui, ",
         "Voici le deuxième texte de l'histoire.",
         "C'est le dernier texte de l'histoire."
     ];
