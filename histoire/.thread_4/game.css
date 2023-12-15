@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "VCR OSD Mono";
+    src: url('/typos/typo.ttf');
+}
+
+.container {
+    text-align: center;
+}
+
+body{
+    font-family: "VCR OSD Mono";
+    background-color:black;
+    color:lightgrey;
+    overflow:hidden;
+    background-size:cover;
+    margin:0;
+    text-shadow: black 2px 2px 1px, black -2px 2px 1px, black -2px -2px 1px, black 2px -2px 1px, black 0px 2px 1px, black 0px -2px 1px, black 2px 0px 1px, black -2px 0px 1px;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}

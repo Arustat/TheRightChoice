@@ -75,8 +75,8 @@ body{
 
 .credit{
     position: fixed;
-    left: 50%;
-    top: 15px;
+    left: 500px;
+    top: 500px;
     color: aliceblue;
     font-size: 10px;
 }
