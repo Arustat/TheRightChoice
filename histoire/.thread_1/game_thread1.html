@@ -6,53 +6,17 @@
     <title>gouvernement</title>
     <link rel="'icon" href='../../icon.png'/>
     <link rel="stylesheet" href="style_thread1_game.css"/>
+    <script src="game.js"></script>
 </head>
 <body>
-    <div class="exit"><a href='../../game_select.html'<h1>Exit</h1></a></div>
-    <div id="story">
-        <p id="story-text"></p>
-    </div>
-    
-    <button onclick="makeChoice(1)">Choix 1</button>
-    <button onclick="makeChoice(2)">Choix 2</button>
-    <button onclick="makeChoice(3)">Choix 3</button>
-    
+    <div class="condition_utilisation"></div>
     <script>
-        let storyTextElement = document.getElementById('story-text');
-        let choiceButtons = document.querySelectorAll('button');
-    
-        function makeChoice(choiceNumber) {
-            switch (choiceNumber) {
-                case 1:
-                    updateStory("Vous avez choisi le chemin 1. C'est une route cahoteuse.");
-                    displayChoices(["Explorer la forêt", "Prendre le pont suspendu"]);
-                    break;
-                case 2:
-                    updateStory("Vous avez choisi le chemin 2. C'est un sentier paisible.");
-                    displayChoices(["Visiter le village", "Traverser le désert"]);
-                    break;
-                case 3:
-                    updateStory("Vous avez choisi le chemin 3. C'est une voie secrète.");
-                    displayChoices(["Descendre dans la grotte", "Escalader la montagne"]);
-                    break;
-            }
+        function debut_histoire(){
+            const condition_utilisation = document.querySelector(".condition_utilisation");
+            const text = "blalalalalalaalalalalalalalallalalalalalalalallalalalallazlalalalallalal"
+            condition_utilisation.innerHTML += text
         }
-    
-        function updateStory(newText) {
-            storyTextElement.textContent = newText;
-        }
-    
-        function displayChoices(choices) {
-            for (let i = 0; i < choiceButtons.length; i++) {
-                if (i < choices.length) {
-                    choiceButtons[i].style.display = 'inline-block';
-                    choiceButtons[i].textContent = choices[i];
-                } else {
-                    choiceButtons[i].style.display = 'none';
-                }
-            }
-        }
+        debut_histoire()
     </script>
-    
 </body>
 </html>
