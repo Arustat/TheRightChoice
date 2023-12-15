@@ -15,6 +15,8 @@ body {
 
 .container {
     text-align: center;
+    margin-right: 10%;
+    margin-left: 10%;
 }
 
 body{
@@ -34,6 +36,7 @@ body{
     color: rgb(255, 255, 255z);
     font-weight: normal;
     font-size: 150%;
+
 }
 a:hover{
     cursor: pointer;
