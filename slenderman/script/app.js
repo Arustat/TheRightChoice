@@ -2,13 +2,14 @@
 var btn = document.getElementById("btn");
 var btn1 = document.getElementById("btn1");
 var btn2 = document.getElementById("btn2");
+var btn3 = document.getElementById("btn3");
 var prompt = document.getElementById("prompt");
 
 btn.addEventListener("click", game);
 
 let script = {
-  desc1 :"la brise glacial de l'hiver faisait danser les feuilles et crisser les branches. Une épaisse brume avait prit place, bloquant la vue a quiconque voulait retrouver son chemin et les reflet argenter de la lune était la seule source de lumière des environ. Cette forêt a quelques chose de bizarre, d'opressant. Comme si dieu nous laisser a l'auré du bois, laissant les âme perdu au mains d'un mal bien plus grands.",
-  desc2 : "c'est seul que vous avancer dans se décors morbide d'un pas incertain. Rien, aucun panneau pour retrouver votre route, aucun sentier, juste des arbre et du brouillard a perte de vue. ",
+  desc1 :"la brise glacial de l'hiver faisait danser les feuilles et crisser les branches. Une épaisse brume avait prit place, bloquant la vue a quiconque voulait retrouver son chemin. Les reflet argenter de la lune était la seule source de lumière des environ. Cette forêt a quelques chose de bizarre, d'opressant. Comme si dieu nous laisser a l'auré du bois, laissant les âme perdu au mains d'un mal bien plus grands.",
+  desc2 : " c'est seul que vous avancer dans se décors morbide d'un pas incertain. Rien, aucun panneau pour retrouver votre route, aucun sentier, juste des arbre et du brouillard a perte de vue. ",
   dial1Mc : " [   ] : HHHHEEEYYY OOOOOH ! Y A QUELQU'UN ?! ",
   desc3 : " ... ",
   dial2Mc : " [   ] : A L'AIDE ?! ",
@@ -87,7 +88,7 @@ function affichage( text){
     document.getElementById("prompt").innerHTML += texte[index];
     index++;
     if(index < texte.length){
-      setTimeout(writeType, 50);
+      setTimeout(writeType, 40  );
     }
   }
   writeType();
@@ -95,19 +96,92 @@ function affichage( text){
 }
 
 function game(){
-  document.getElementById("btn").className = "button1 hide";
-  document.getElementById("btn1").className = "button2";
-  document.getElementById("btn2").className = "button2";
   let desc1 = script.desc1;
   let desc2 = script.desc2;
+  let dial1Mc = script.dial1Mc;
+  let desc3 = script.desc3;
+  let dial2Mc = script.dial2Mc;
+  let dial2Inc = script.dial2Inc;
+  let choix1Act1 = script.choix1Act1;
+  let desc4 = script.desc4;
+  let dial1Act1Inc = script.dial1Act1Inc;
+  let desc5 = script.desc5;
+  let desc6 = script.desc6;
+  let choix1Act2 = script.choix1Act2;
+  let choix2Act2 = script.choix2Act2;
+  let desc7Act2Ch1 = script.desc7Act2Ch1;
+  let desc8Act2Ch1 = script.desc8Act2Ch1;
+  let dial1Act2Ch1 = script.dial1Act2Ch1;
+  let dial2Act2Ch1 = script.dial2Act2Ch1;
+  let choix1Act3Ch1 = script.choix1Act3Ch1;
+  let choix2Act3Ch2 = script.choix2Act3Ch2;
+  let dial2Act2Ch1bis = script.dial2Act2Ch1;
+  let dial3Act2Ch1 = script.dial3Act2Ch1;
+  let dial4Act2Ch1 = script.dial4Act2Ch1;
+  let desc9Act2Ch1 = script.desc9Act2Ch1;
+  let choix1Act2Ch1fin1 = script.choix1Act2Ch1fin1;
+  let choix2Act2Ch1fin2 = script.choix2Act2Ch1fin2;
+  let desc10Act2Ch1fin1 = script.desc10Act2Ch1fin1;
+  let desc11Act2Ch1fin1 = script.desc11Act2Ch1fin1;
+  let dial1Act2Ch2 = script.dial1Act2Ch2;
+  let dial2Act2Ch2 = script.dial2Act2Ch2;
+  let dial3Act2Ch2 = script.dial3Act2Ch2;
+  let desc9Act2Ch2 = script.desc9Act2Ch2;
+  let choix1Act2Ch2finbis = script.choix1Act2Ch2fin;
+  let desc10Act2Ch2fin = script.desc10Act2Ch2fin;
+  let desc11Act2Ch2fin = script.desc11Act2Ch2fin;
+  let dial3Act2Ch2fin = script.dial3Act2Ch2fin;
+  let dial4Act2Ch2fin = script.dial4Act2Ch2fin;
+  let dial5Act2Ch2fin = script.dial5Act2Ch2fin;
+  let desc12Act2Ch2fin = script.desc12Act2Ch2fin;
+  let choix1Act2Ch2fin = script.choix1Act2Ch2fin;
+  let desc13Act2Ch2fin = script.desc13Act2Ch2fin;
+  let dial6Act2Ch2fin = script.dial6Act2Ch2fin;
+  let descAct2Chx2Ch1 = script.descAct2Chx2Ch1;
+  let choix1Act2Chx2Ch1bis = script.choix1Act2Chx2Ch1;
+  let choix2Act2Chx2Ch1bis = script.choix2Act2Chx2Ch1;
+  let descAct2Chx2Ch1Ch1bis = script.descAct2Chx2Ch1Ch1;
+  let choix1Act2Chx2Ch1Ch1 = script.choix1Act2Chx2Ch1Ch1;
+  let choix2Act2Chx2Ch1Ch1 = script.choix2Act2Chx2Ch1Ch1;
+  let descAct2Chx2Ch1Ch1Ch1bis = script.descAct2Chx2Ch1Ch1Ch1;
+  let dial1Act2Chx2Ch1fin = script.dial1Act2Chx2Ch1fin;
+  let descAct2Chx2Ch2finbis = script.descAct2Chx2Ch2fin;
+  let dial1Act2Chx2Ch1 = script.dial1Act2Chx2Ch1;
+  let choix1Act2Chx2Ch1 = script.choix1Act2Chx2Ch1;
+  let choix2Act2Chx2Ch1 = script.choix2Act2Chx2Ch1;
+  let descAct2Chx2Ch1Ch1 = script.descAct2Chx2Ch1Ch1;
+  let dial1Act2Chx2Ch1Ch1finbis = script.dial1Act2Chx2Ch1Ch1fin;
+  let descAct2Chx2Ch1fin = script.descAct2Chx2Ch1fin;
+  let descAct2Chx2Ch2fin = script.descAct2Chx2Ch2fin;
+  let dial1Act2Chx2Ch1Ch1 = script.dial1Act2Chx2Ch1Ch1;
+  let descAct2Chx2Ch1Ch1fin = script.descAct2Chx2Ch1Ch1fin;
+  let descAct2Chx2Ch1Ch1Ch1prime = script.descAct2Chx2Ch1Ch1Ch1;
+  let dial1Act2Chx2Ch1Ch1fin = script.dial1Act2Chx2Ch1Ch1fin;
+  let descAct2Chx2Ch1Ch1Ch1 = script.descAct2Chx2Ch1Ch1Ch1;
+  let end = script.end;
+
+
+  document.getElementById("btn").className = "button1 hide";
   document.getElementById("prompt").className = "";
-  
-  setTimeout(function(){
-    index = 0;
-    affichage(desc1)}, 50);
+
+    affichage(desc1);
 
   setTimeout(function(){
+    prompt.innerHTML += "<br>";
+    prompt.innerHTML += "<br>";
     index = 0;
-    affichage(desc2)}, 50);
+    affichage(desc2)},desc1.length *60 + 100);
+
+    document.getElementById("btn 3").className = "btn btn-primary button1";
+    btn3.innerHTML = dial1Mc;
+
+  
+  btn3.addEventListener("click", function(){
+    document.getElementById("btn 3").className = "button1 hide";
+    prompt.innerHTML += "<br>";
+    prompt.innerHTML += "<br>";
+    index = 0;
+    affichage(desc3);
+  });
 
 }
