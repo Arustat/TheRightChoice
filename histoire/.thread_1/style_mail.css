@@ -234,6 +234,7 @@ body{
     height: 65%;
     border: outset;
     border-color: #202124;
+    overflow-y: scroll ;
 }
 
 
