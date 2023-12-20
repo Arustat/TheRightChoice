@@ -3,26 +3,35 @@
     src: url('../../typos/typo.ttf');
 }
 
-body{
+body {
     font-family: "VCR OSD Mono";
-    background-color:black;
-    color:lightgrey;
-    overflow:hidden;
-    background-size:cover;
-    background-size: 100%;
+    background-color: black;
+    color: white; /* Changement de la couleur du texte */
+    overflow: auto; /* Utilisation de overflow: auto; pour ajouter une barre de défilement si nécessaire */
+    background-size: cover;
     background-position: center;
-    margin:0;
+    margin: 0;
     padding: 0;
     text-align: center;
-    text-shadow: black 2px 2px 1px, black -2px 2px 1px, black -2px -2px 1px, black 2px -2px 1px, black 0px 2px 1px, black 0px -2px 1px, black 2px 0px 1px, black -2px 0px 1px;    
+    text-shadow: 2px 2px 1px black, -2px 2px 1px black, -2px -2px 1px black, 2px -2px 1px black, 0px 2px 1px black, 0px -2px 1px black, 2px 0px 1px black, -2px 0px 1px black;
 }
 
-.condition_utilisation{
+.condition_utilisation {
     background-color: aliceblue;
     width: 50vh;
-    height: 80vh;
+    height: 60vh;
     display: inline-block;
     margin-top: 10vh;
     box-shadow: 5px 2px 2px rgba(119, 103, 103, 0.444);
+    overflow-y: auto;
+    padding: 10px; /* Ajout d'un espacement intérieur */
+}
+
+.cond {
+    font-family: Arial;
+    color: black;
+    font-size: 10px;
+    text-shadow: none;
     overflow: hidden;
+
 }
