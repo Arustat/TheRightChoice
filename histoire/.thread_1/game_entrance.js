@@ -31,7 +31,9 @@ var docfrag = document.createDocumentFragment();
 
 function updateScreen() {
   //Shuffle the "txt" array
-  txt.push(txt.shift());
+  setTimeout(function() {
+    txt.push(txt.shift());
+  }, 200);
   //Rebuild document fragment
   txt.forEach(function(e) {
     var p = document.createElement("p");

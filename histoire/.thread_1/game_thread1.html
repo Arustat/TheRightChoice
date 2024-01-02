@@ -3,16 +3,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>gouvernement</title>
+    <title>gouv82@test?conf=12687r!/</title>
     <link rel="icon" href="../../icon.png"/>
     <link rel="stylesheet" href="style_thread1_game.css"/>
     <script src="game.js"></script>
 </head>
 <body>
     <div class="condition_utilisation">
+        <p class="cond"></p>
         <input type="checkbox" id="acceptConditions">
         <label for="acceptConditions">J'accepte les conditions</label>
-        <p class="cond"></p>
+    </div>
+    <div class="game" style="display: none;">
+        <div class="text">
+            <p id="textDisplay"></p>
+        </div>
     </div>
     <script>
         function debut_histoire(){
@@ -20,7 +25,62 @@
             const text = "Protection of Personal Data:\n Information obtained during the test is strictly confidential and should not be shared with third parties unless explicitly permitted by the test administrator.\nNon-Disclosure of Questions and Answers: Test questions and your responses must not be shared with others, maintaining confidentiality .\nRespect for Other Candidates' Privacy: Avoid discussing test details with fellow candidates to ensure fairness and avoid influencing others' performance \nResponsible Use of Resources: Test materials provided (documents, computers, etc.) are for test purposes only and should not be copied, photographed, or shared outside the test context [4].\nConfidentiality of Results: Individual results will be treated confidentially and disclosed only to concerned parties and selection process administrators.\nPost-Test Confidentiality: Refrain from discussing specific questions or test details with others after the test, respecting the selection process's confidentiality.\nPersonal Responsibility: Ensure the protection of personal information and maintain test confidentiality."
             condition_utilisation.textContent += text;
         }
+        
         debut_histoire();
+
+        document.querySelector(".condition_utilisation input").addEventListener("click", function(){
+            if(this.checked){
+                document.querySelector(".condition_utilisation").style.display = "none";
+                document.querySelector(".game").style.display = "flex";
+                game();
+            }
+        });
+
+        function game() {
+            var textDisplay = document.getElementById("textDisplay");
+            var text = ["Bienvenue", "Vous avez été sélectionné", "Veuillez entrer votre numéro d'agent"];
+            var index = 0;
+            var textIndex = 0;
+            var speed = 50; // Vitesse d'affichage, en millisecondes par lettre
+            var pauseTime = 1000; // Temps d'attente entre les textes, en millisecondes
+        
+            function typing() {
+                var currentText = text[index];
+                if (textIndex <= currentText.length) {
+                    textDisplay.textContent = currentText.substring(0, textIndex);
+                    textIndex++;
+                    setTimeout(typing, speed);
+                } else {
+                    textIndex = 0;
+                    index++;
+                    if (index < text.length) {
+                        setTimeout(typing, pauseTime);
+                    }else{
+                        textDisplay.classList.add("animate-text");
+                        setTimeout(function() {
+                            var input = document.createElement("input");
+                            input.setAttribute("type", "text");
+                            input.setAttribute("id", "input");
+                            input.setAttribute("placeholder", "Numéro d'agent");
+                            var button = document.createElement("button");
+                            button.setAttribute("type", "button");
+                            button.setAttribute("id", "button");
+                            button.textContent = "Valider";
+                            document.querySelector(".game").appendChild(input);
+                            document.querySelector(".game").appendChild(button);
+                            document.getElementById("button").addEventListener("click", function(){
+                                var input = document.getElementById("input").value;
+                                if(input === "007AD65P"){
+                                    document.querySelector(".game").style.display = "none";
+                                    window.location.href = "test.html";
+                                }
+                            });
+                        }, 1000);
+                    }
+                }
+            } 
+            typing();
+        }
     </script>
 </body>
 </html>
