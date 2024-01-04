@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextButton = document.getElementById('next-button');
 
     const stories = [
-        "Ça y est, c'est le grand jour ! Aujourd'hui, ",
+        "Ça y est, c'est le grand jour ! Vous entammez  ",
         "Voici le deuxième texte de l'histoire.",
         "C'est le dernier texte de l'histoire."
     ];
@@ -56,6 +56,5 @@ document.addEventListener('DOMContentLoaded', function() {
 
     nextButton.addEventListener('click', showNextStory);
 
-    // Début de l'histoire une fois que la page est chargée
     startStory();
 });
