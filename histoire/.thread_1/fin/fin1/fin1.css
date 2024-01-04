@@ -1,0 +1,59 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: black;
+    overflow: hidden;
+  }
+
+.jumpscare {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
+.jumpscare img {
+    width: 100%;
+    height: 100%;
+    margin-top: 5vh;
+}
+
+
+.shake {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both; 
+  /*contrôle l'accéleration de l'animation cubic-bezier*/
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-12px, 0, 0); /*va vers la gauche*/
+  }
+  
+  20%, 80% { 
+    transform: translate3d(13px, 0, 0); /*va vers la droite*/
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-20px, 0, 0); /*va vers la gauche*/
+  }
+
+  40%, 60% {
+    transform: translate3d(20px, 0, 0); /*va vers la droite*/
+  }
+}
+
+.fade-out{
+  animation: fadeOut ease 1s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}

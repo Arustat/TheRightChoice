@@ -11,11 +11,11 @@
     <div class="msg"></div>
     <div id="console"></div>
     <script>
-        var intervalID = window.setInterval(updateScreen, 200);
-        var console = document.getElementById("console");
+        
+        const console = document.getElementById("console");
         const msg = document.querySelector(".msg");
 
-        var txt = [
+        const txt = [
         "FORCE: XX0022. ENCYPT://000.222.2345",
         "TRYPASS: ********* AUTH CODE: ALPHA GAMMA: 1___ PRIORITY 1",
         "RETRY: REINDEER FLOTILLA",
@@ -40,30 +40,27 @@
         "SCAN: __ 0020.0000.0553.0080",
         ]
 
-        var docfrag = document.createDocumentFragment();
-
         function updateScreen() {
-        //Shuffle the "txt" array
-        txt.push(txt.shift());
-        //Rebuild document fragment
-        txt.forEach(function(e) {
-            var p = document.createElement("p");
-            p.textContent = e;
-            docfrag.appendChild(p);
-        });
-        //Clear DOM body
-        while (console.firstChild) {
-            console.removeChild(console.firstChild);
+            // Clear console
+            console.innerHTML = '';
+        
+            txt.push(txt.shift());
+            txt.forEach(e => console.innerHTML += `<p>${e}</p>`);
         }
-        console.appendChild(docfrag);
-        }
-        setTimeout(() => { msg.style.background = "limegreen";
-        msg.innerHTML = "ACCESS GRANTED";
-        msg.style.boxShadow = "0 0 30px limegreen";
-        console.style.display = "none";}, 5000);
-        setTimeout(() =>{
-            window.location.href = "game_thread1.html"
-        },7000)
+        
+        // Set interval to update screen every 200ms
+        setInterval(updateScreen, 200);
+                
+        // Set timeout to change message style after 5s
+        setTimeout(() => {
+            msg.style.background = "limegreen";
+            msg.innerHTML = "ACCESS GRANTED";
+            msg.style.boxShadow = "0 0 30px limegreen";
+            console.style.display = "none";
+        }, 5000);
+
+        // Set timeout to redirect after 7s
+        setTimeout(() => window.location.href = "game_thread1.html", 7000);
     </script>
 </body>
 </html>
