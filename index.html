@@ -11,9 +11,14 @@
       <div class="calendar">
         <script>
           var dateAndTimE = document.getElementsByClassName("calendar")[0];
-          var date = new Date();
-          dateAndTimE.innerHTML = date;
-        </script>
+      
+          function updateTime() {
+              var date = new Date();
+              dateAndTimE.innerHTML = date;
+          }
+      
+          setInterval(updateTime, 1000); 
+      </script>
       </div>
       <div class="Title">
           <h1>Bienvenue sur The Right Choice.</h1>
