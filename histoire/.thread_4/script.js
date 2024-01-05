@@ -3,9 +3,13 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextButton = document.getElementById('next-button');
 
     const stories = [
-        "Ça y est, c'est le grand jour ! Vous entammez  ",
-        "Voici le deuxième texte de l'histoire.",
-        "C'est le dernier texte de l'histoire."
+        "Ça y est, c'est le grand jour ! Vous entammez votre premier jour dans ce nouveau travail !",
+        "Il faut dire que c'est le 3ème en 1 mois, donc pour celui-ci, vous n'aviez pas trop le choix que d'accepter.",
+        "Il n'y avait que ça, un poste de nuit, mal payé, et dont vous n'avez trouvé aucun avis sur les précédents employés.",
+        "Mais bon, après tout, ce ne devrait pas être trop compliqué, vous n'avez qu'à surveiller les caméras de sécurité.",
+        "Et puis, l'endroit étant un vieille pizzeria abandonnée, il ne devrait pas y avoir grand chose à surveiller.",
+        "Vous aurez peut-être même le temps de faire une petite sieste !",	
+        "Aller, c'est parti !"
     ];
 
     let currentStoryIndex = 0;
