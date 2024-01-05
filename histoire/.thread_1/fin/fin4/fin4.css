@@ -1,0 +1,374 @@
+body::before{
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    z-index: 1;
+    opacity: 1;
+    animation: fadeout 3s ease-in-out 1s forwards;
+    pointer-events: none;
+}
+
+body.opacity-zero::before {
+    opacity: 0;
+}
+
+@keyframes fadeout {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@keyframes fadein {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+body.animation-start::before {
+    animation: fadein 3s ease-in-out 1s forwards;
+}
+
+body.animation-finished::before {
+    display: none; /* Supprime l'élément après l'animation */
+}
+body{
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0000006f;
+    overflow: hidden;
+    display: block;
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.top-section {
+    display: flex;
+    align-items: center;
+}
+
+
+.user,
+.labels,
+.compose {
+    width: 100%;
+    padding: 20px;
+    box-sizing: border-box; /* Inclut le padding dans la largeur */
+}
+
+
+.compose {
+    background-color: #3b3d41;
+    text-align: center;
+}
+
+.compose button {
+    background-color: #ff0000;
+    color: white;
+    padding: 20px 40px;
+    border-radius: 5%;
+    border: none;
+    animation: clignoter 1s infinite;
+}
+
+@keyframes clignoter {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }  
+}
+
+.compose button:hover {
+    background-color: #5f6368;
+}
+
+.user {
+    background-color: #202124;
+    color: white;
+    text-align: center;
+
+}
+
+.user h1 {
+    margin: 0;
+    font-size: 20px;
+}
+
+.img img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+.header {
+    padding: 10px 20px;
+    text-align: left;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 0; /* Supprime la marge supérieure */
+
+}
+
+.inbox_header {
+    background-color: #202124;
+    align-items: center;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    margin-top: 0; /* Supprime la marge supérieure */
+}
+
+.header h1 {
+    margin: 0;
+    font-size: 40px;
+    width: 100%;
+    color: white;
+}
+
+.search-bar {
+    padding: 10px 0; /* Ajuste le padding */
+    text-align: right;
+    width: auto; /* Ajuste la largeur automatiquement */
+    border-radius: 5%;
+}
+.search-bar input {
+    width: 70%; /* Ajuste la largeur de l'input */
+    padding: 5px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    border-radius: 5%;
+}
+
+.labels {
+    background-color: #202124;
+    color: white;
+    overflow-y: auto;
+    height: 100vh;
+}
+
+.labels h2 {
+    color: #fdfeff;
+    text-align: center;
+}
+
+.labels ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.labels li {
+    padding: 10px 0;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+  
+.table td, .table th {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+  
+.table tbody tr:hover {
+    background-color: #8e8d8d;
+}
+
+  
+.table a {
+    text-decoration: none;
+    color: #333;
+}
+  
+.table a:hover {
+    text-decoration: underline;
+}
+.pagination {
+    list-style: none;
+    padding: 0;
+    margin-top: 75vh;
+    text-align: center;
+    margin-left: 0;
+    width: 100%;
+}
+  
+.pagination li {
+    display: inline-block;
+    margin: 0 4px;
+}
+  
+.pagination a {
+    text-decoration: none;
+    color: #333;
+    padding: 6px 10px;
+    border: 1px solid #ccc;
+}
+  
+.pagination .active a {
+    background-color: #007bff;
+    color: #fff;
+    border: 1px solid #007bff;
+}
+  
+.pagination a:hover {
+    background-color: #f4f4f4;
+}
+
+
+.table-responsive {
+    width: 100%;
+    height: auto;
+
+}
+
+.table-content {
+    background-color:#f6f6f6;
+    height: 70%;
+}
+
+
+#two{
+    background-color: red;
+}
+
+#one{
+    background-color: green;
+}
+#exit {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    width: 10%;
+    z-index: 100;
+    padding: 10px;
+    background-color: #ffffff;
+    color: rgb(4, 0, 0);
+    border: none;
+    border-radius: 2px;
+    animation: "";
+}
+
+@keyframes showExit {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.compose_content {
+    display: none;
+    position: fixed;
+    top: 55.5vh;
+    left: 119.5vh;
+    transform: translate(-50%, -50%);
+    width: 80vw;
+    height: 70vh;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-color: #202124;
+    overflow-y: scroll ;
+}
+
+.compose_content button {
+    background-color: #202124;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10%;
+    border: none;
+    position: inherit;
+    left: 95%;
+}
+
+.compose_content h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.compose_content .expediteur {
+    font-size: 20px;
+    width: 80%;
+    color: white;
+    background-color: #202124;
+}
+
+.compose_content p {
+    border: 1px solid black; 
+    padding: 10px;
+    line-height: 1.6;
+    color: #333;
+}
+
+.cursor-typing{
+    cursor: text;
+}
+
+#valider{
+    margin-top: 20px; /* Ajoutez cette ligne */
+    display: none;
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10%;
+    border: none;
+    position: relative;
+    animation: "showValider 1s ease-in-out 1s forwards";
+    right: 10%;
+}
+
+#valider:hover{
+    background-color: #5f6368;
+    color:#202124
+}
+
+@keyframes showValider {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes hideExit {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
