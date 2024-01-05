@@ -1,3 +1,5 @@
+var audio = new Audio('access/audio/ambiance.mp3');
+
 type("Vous allez débuter le test.", "scenario");
 
 let etape = 0;
