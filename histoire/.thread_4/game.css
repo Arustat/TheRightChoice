@@ -1,6 +1,6 @@
 @font-face {
     font-family: "VCR OSD Mono";
-    src: url('/typos/typo.ttf');
+    src: url('../../typos/typo.ttf');
 }
 
 
@@ -65,4 +65,7 @@ body {
 @keyframes marquee {
     0% { transform: translateY(1500%); }
     100% { transform: translateY(-1500%); }
+}
+p {
+    font-family: "VCR OSD Mono";
 }
