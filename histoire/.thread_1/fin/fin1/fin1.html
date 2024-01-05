@@ -8,11 +8,22 @@
 <body>
     <div class="jumpscare" id="jumpscare">
         <img src="img_jumpscare/jumpscare.webp" alt="Jumpscare">
-    </div> 
-    
-    <div class="memorial" id="memorial">
-        <img src="img_jumpscare/memorial.webp" alt="Memorial">
     </div>
+    <div class="black-overlay" id="blackOverlay"></div>
+    <div class="memorial" id="memorial">
+        <img src="img/christ.jpg" id="christ" onclick="change()">
+        <div class="cacher" id="cacher"></div>
+        <div class="top">
+            <h1>IN MEMORIAM</h1>
+            <h2 id="h2">CHRISTOPHE GIOVANNA</h2>
+        </div>
+        <h4>1999 - 2024</h4>
+    </div>
+    <script>
+        setTimeout(function() {
+            window.location.href = "../../../../index.html";
+        }, 10000);
+    </script>
     <script src="fin1.js"></script>
 </body>
 </html>

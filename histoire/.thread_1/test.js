@@ -1,3 +1,5 @@
+type("Vous allez débuter le test.", "scenario");
+
 let etape = 0;
 
 function animation_victime(){
@@ -7,21 +9,58 @@ function animation_victime(){
 let currentIndex = 1;
 const image = document.createElement('img');
 
-function look_victime() {
-    document.getElementById('scenario').innerText = "Reconnais-tu cette personne ?";
 
+function type(text, elementId){
+    let i = 0;
+    const intervalId = setInterval(function(){
+        if (text[i] === " "){
+            document.getElementById(elementId).innerHTML += "&nbsp;";
+        } else {
+            document.getElementById(elementId).innerHTML += text[i];
+        }
+        i++;
+        if(i === text.length ){
+            clearInterval(intervalId);
+        }
+    }, 20);
+}
+
+
+
+
+function look_victime() {
+    document.getElementById('scenario').innerText = "";
+    type("Reconnais-tu cette personne ?", 'scenario');
+
+    //supression des boutons
+    let button1 = document.getElementsByTagName('button')[0];
+    let button2 = document.getElementsByTagName('button')[1];
+    button1.parentNode.removeChild(button1);
+    button2.parentNode.removeChild(button2);
+
+    //ajout de l'image
     image.setAttribute('src', 'access/victime/' + currentIndex + '.jpeg');
     image.setAttribute('width', '200');
     image.setAttribute('height', '200');
     image.setAttribute('id', 'victimImg');
     document.getElementById('histoire').appendChild(image);
 
-    document.getElementsByTagName('button')[0].innerText = "oui";
-    document.getElementsByTagName('button')[0].setAttribute('onclick', 'next("oui")');
-    document.getElementsByTagName('button')[1].innerText = "non";
-    document.getElementsByTagName('button')[1].setAttribute('onclick', 'next("non")');
-    
+    //remet les boutons
+    button1.innerText = "oui";
+    button1.setAttribute('onclick', 'next("oui")');
+    button1.style.display = 'inline-block';
+    button1.style.marginTop = '15px';
+    document.getElementById('histoire').appendChild(button1);
+
+    button2.innerText = "non";
+    button2.setAttribute('onclick', 'next("non")');
+    button2.style.display = 'inline-block';
+    button2.style.marginTop = '15px';
+    document.getElementById('histoire').appendChild(button2);
+
 }
+
+button
 
 function next(choix) {
     if (choix === "oui") {
@@ -47,7 +86,9 @@ function next(choix) {
 
 function start() {
     etape = 1;
-    document.getElementById('scenario').innerText = "Serais-tu prêt à consacrer ta vie pour une cause qui pourrait coûterait la vie de nombreux innocent ?";
+    document.getElementById('scenario').innerText ="";
+    type("Serais-tu prêt à consacrer ta vie pour une cause qui coûterait la vie de nombreux innocent ?","scenario");
+    
     document.getElementsByTagName('button')[0].innerText = "oui";
     document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
     const boutonDroite = document.createElement('button');
@@ -58,52 +99,57 @@ function start() {
 
 function choisirChemin(choix) {
     if (etape === 1) {
-        document.getElementById('scenario').innerText = "Chaque vies ont-elles la même valeur ?";
+        document.getElementById('scenario').innerText = "";
+        type("Chaque vies ont-elles la même valeur ?","scenario")
         document.getElementsByTagName('button')[0].innerText = "oui";
         document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
         document.getElementsByTagName('button')[1].innerText = "non";
         document.getElementsByTagName('button')[1].setAttribute('onclick', 'choisirChemin("non")');
-        document.getElementsByTagName('button')[0].style.display = "inline";
-        document.getElementsByTagName('button')[1].style.display = "inline";
+        document.getElementsByTagName('button')[0].style.display = "inline-block";
+        document.getElementsByTagName('button')[1].style.display = "inline-block";
         etape = 2; 
     } else if (etape === 2) {
         if(choix === "non"){
-            document.getElementById('scenario').innerText = "As-tu déjà ôter la vie à quelqu'un ?";
+            document.getElementById('scenario').innerText = "";
+            type("As-tu déjà ôter la vie à quelqu'un ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "non";
             document.getElementsByTagName('button')[1].setAttribute('onclick', 'choisirChemin("non")');
-            document.getElementsByTagName('button')[0].style.display = "inline";
-            document.getElementsByTagName('button')[1].style.display = "inline";
+            document.getElementsByTagName('button')[0].style.display = "inline-block";
+            document.getElementsByTagName('button')[1].style.display = "inline-block";
             etape = 4;
         }else if (choix === "oui"){
-            document.getElementById('scenario').innerText = "Croit-tu en une entité supérieur ?";
+            document.getElementById('scenario').innerText = "";
+            type("Crois-tu en une entité supérieur ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "non";
             document.getElementsByTagName('button')[1].setAttribute('onclick', 'choisirChemin("non")');
-            document.getElementsByTagName('button')[0].style.display = "inline";
-            document.getElementsByTagName('button')[1].style.display = "inline";
+            document.getElementsByTagName('button')[0].style.display = "inline-block";
+            document.getElementsByTagName('button')[1].style.display = "inline-block";
             etape = 3;
         }
     }else if (etape === 3) {
         if (choix === "oui") {
-            document.getElementById('scenario').innerText = "Penses-tu que cette entité est bienveillante ?";
+            document.getElementById('scenario').innerText = "";
+            type("Penses-tu que cette entité est bienveillante ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "non";
             document.getElementsByTagName('button')[1].setAttribute('onclick', 'choisirChemin("non")');
-            document.getElementsByTagName('button')[0].style.display = "inline";
-            document.getElementsByTagName('button')[1].style.display = "inline";
+            document.getElementsByTagName('button')[0].style.display = "inline-block";
+            document.getElementsByTagName('button')[1].style.display = "inline-block";
             etape = 11;
         } else if (choix === "non") {       
-            document.getElementById('scenario').innerText = "Penses-tu que l'humanité a un but précis ?";
+            document.getElementById('scenario').innerText = "";
+            type("Penses-tu que l'humanité a un but précis ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "Servir l'Etat";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "Servir le peuple";
             document.getElementsByTagName('button')[1].setAttribute('onclick', 'choisirChemin("non")');
-            document.getElementsByTagName('button')[0].style.display = "inline";
-            document.getElementsByTagName('button')[1].style.display = "inline";
+            document.getElementsByTagName('button')[0].style.display = "inline-block";
+            document.getElementsByTagName('button')[1].style.display = "inline-block";
             etape = 16;
         }
     }else if(etape === 3.5){
@@ -117,60 +163,66 @@ function choisirChemin(choix) {
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].style.display = "none";
         }else if (choix === "oui") {
-            document.getElementById('scenario').innerText = "As-tu ressentis de la culpabilité ?";
+            document.getElementById('scenario').innerText = "";
+            type("As-tu ressentis de la culpabilité ?","scenario");
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "non";
             document.getElementsByTagName('button')[1].setAttribute('onclick', 'choisirChemin("non")');
-            document.getElementsByTagName('button')[0].style.display = "inline";
-            document.getElementsByTagName('button')[1].style.display = "inline";
+            document.getElementsByTagName('button')[0].style.display = "inline-block";
+            document.getElementsByTagName('button')[1].style.display = "inline-block";
             etape = 5;
         }
     }else if(etape === 5){
         if (choix === "oui") {
-            document.getElementById('scenario').innerText = "Regrette-tu tes actes ?";
+            document.getElementById('scenario').innerText = "";
+            type("Regrette-tu tes actes ?","scenario");
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "non";
             document.getElementsByTagName('button')[1].setAttribute('onclick', 'choisirChemin("non")');
-            document.getElementsByTagName('button')[0].style.display = "inline";
-            document.getElementsByTagName('button')[1].style.display = "inline";
+            document.getElementsByTagName('button')[0].style.display = "inline-block";
+            document.getElementsByTagName('button')[1].style.display = "inline-block";
             etape = 6;
         }else if (choix === "non") {
-            document.getElementById('scenario').innerText = "As-tu ressentis de la satisfaction ?";
+            document.getElementById('scenario').innerText = "";
+            type("As-tu ressentis de la satisfaction ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
-            document.getElementsByTagName('button')[0].style.display = "inline";
-            document.getElementsByTagName('button')[1].style.display = "inline";
+            document.getElementsByTagName('button')[0].style.display = "inline-block";
+            document.getElementsByTagName('button')[1].style.display = "inline-block";
             etape = 7;
         }
     }else if(etape === 6){
         if (choix === "oui") {
             fin("1");
         }else if(choix ==="non"){
-            document.getElementById('scenario').innerText = "As-tu ressentis de la satisfaction ?";
+            document.getElementById('scenario').innerText = "";
+            type("As-tu ressentis de la satisfaction ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
-            document.getElementsByTagName('button')[0].style.display = "inline";
-            document.getElementsByTagName('button')[1].style.display = "inline";
+            document.getElementsByTagName('button')[0].style.display = "inline-block";
+            document.getElementsByTagName('button')[1].style.display = "inline-block";
             etape = 7;
         }
     }else if(etape === 7){
         if (choix === "oui") {
             animation_victime();
         }else if(choix === "non"){
-            document.getElementById('scenario').innerText = "Les âmes que tu as fauché sont-elles vraiment innocente ?";
+            document.getElementById('scenario').innerText = "";
+            type("Les âmes que tu as fauché sont-elles vraiment innocente ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "oui";
             document.getElementsByTagName('button')[1].setAttribute('onclick', 'choisirChemin("oui")');
-            document.getElementsByTagName('button')[0].style.display = "inline";
+            document.getElementsByTagName('button')[0].style.display = "inline-block";
             document.getElementsByTagName('button')[1].style.display = "inline";
             etape = 9;
         }
     }else if(etape === 8){
         if (choix === "oui") {
-            document.getElementById('scenario').innerText = "Es-ce que c'est cette entité supérieur qui t'as ordonné de tuer ?";
+            document.getElementById('scenario').innerText = "";
+            type("Es-ce que c'est cette entité supérieur qui t'as ordonné de tuer ?","scenario");
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "oui";
@@ -188,7 +240,8 @@ function choisirChemin(choix) {
         }
     }else if(etape === 10){
         if (choix === "oui") {
-            document.getElementById('scenario').innerText = "Te souviens-tu de leurs sangs sur tes mains ?";
+            document.getElementById('scenario').innerText = "";
+            type("Te souviens-tu de leurs sangs sur tes mains ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "oui";
@@ -198,7 +251,8 @@ function choisirChemin(choix) {
             etape = 10.5
         }
     }else if(etape === 10.5){
-            document.getElementById('scenario').innerText = "Te souviens-tu de leurs hurlements de douleurs ?";
+            document.getElementById('scenario').innerText = "";
+            type("Te souviens-tu de leurs hurlements de douleurs ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "oui";
@@ -207,7 +261,8 @@ function choisirChemin(choix) {
             document.getElementsByTagName('button')[1].style.display = "inline";
             etape = 10.9;
     }else if(etape === 10.9){
-            document.getElementById('scenario').innerText = "Qui est le véritable responsable de leurs morts ?";
+            document.getElementById('scenario').innerText = "";
+            type("Qui est le véritable responsable de leurs morts ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "Moi";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "Moi";
@@ -216,7 +271,8 @@ function choisirChemin(choix) {
             document.getElementsByTagName('button')[1].style.display = "inline";
             etape = 10.7;
     }else if(etape === 10.7){
-            document.getElementById('scenario').innerText = "Es-tu le Red Killer ?";
+            document.getElementById('scenario').innerText = "";
+            type("Es-tu le Red Killer ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "Oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "Non";
@@ -232,7 +288,8 @@ function choisirChemin(choix) {
         }
     }else if(etape === 11){
         if (choix === "oui") {
-            document.getElementById('scenario').innerText = "Si cette entité n'existe pas, pourrais tu vivre avec cette idée ?";
+            document.getElementById('scenario').innerText = "";
+            type("Si cette entité n'existe pas, pourrais tu vivre avec cette idée ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "non";
@@ -241,7 +298,8 @@ function choisirChemin(choix) {
             document.getElementsByTagName('button')[1].style.display = "inline";
             etape = 12;
         }else if(choix === "non"){
-            document.getElementById('scenario').innerText = "Penses-tu qu'elle te veux du mal ?";
+            document.getElementById('scenario').innerText = "";
+            type("Penses-tu qu'elle te veux du mal ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "non";
@@ -252,7 +310,8 @@ function choisirChemin(choix) {
         }
     }else if(etape === 12){
         if (choix === "oui"){
-            document.getElementById('scenario').innerText = "Penses-tu être sous l'influence d'un complot gouvernemental ?";
+            document.getElementById('scenario').innerText = "";
+            type("Penses-tu être sous l'influence d'un complot gouvernemental ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "non";
@@ -261,7 +320,8 @@ function choisirChemin(choix) {
             document.getElementsByTagName('button')[1].style.display = "inline";
             etape = 13;
         }else if(choix === "non"){
-            document.getElementById('scenario').innerText = "As-tu une confiance aveugle envers l'Etat ?";
+            document.getElementById('scenario').innerText = "";
+            type("As-tu une confiance aveugle envers l'Etat ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "Oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "Non";
@@ -272,7 +332,8 @@ function choisirChemin(choix) {
         }
     }else if (etape === 14){
         if (choix === "oui"){
-            document.getElementById('scenario').innerText = "Reconnais-tu que cette entité supérieur est l'Etat ?";
+            document.getElementById('scenario').innerText = "";
+            type("Reconnais-tu que cette entité supérieur est l'Etat ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "Oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "Non";
@@ -285,7 +346,8 @@ function choisirChemin(choix) {
         }
     }else if (etape === 15){
         if (choix === "oui"){
-            document.getElementById('scenario').innerText = "L'Etat te protège, te nourrit, te loge, te soigne, te divertit, te forme, te guide, te surveille, te contrôl. Tu obeiras à l'Etat ? ";
+            document.getElementById('scenario').innerText = "";
+            type("L'Etat te protège, te nourrit, te loge, te soigne, te divertit, te forme, te guide, te surveille, te contrôl. Tu obeiras à l'Etat ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "Oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "Non";
@@ -297,6 +359,7 @@ function choisirChemin(choix) {
     }else if(etape == 13){
         if (choix === "oui"){
             document.getElementById('scenario').innerText = "Kdo je červený vrah ?";
+            type("Kdo je červený vrah ?","scenario")
             let input_fin = document.createElement('input');
             input_fin.setAttribute('type', 'password');
             input_fin.setAttribute('id', 'secret');
@@ -314,7 +377,8 @@ function choisirChemin(choix) {
         if (choix === "non"){
             etape = 11;
         }else if(choix === "oui"){
-            document.getElementById('scenario').innerText = "Fais-tu le serment de servir ton Etat jusqu'à la mort ?";
+            document.getElementById('scenario').innerText = "";
+            type("Fais-tu le serment de servir ton Etat jusqu'à la mort ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "non";
@@ -325,7 +389,8 @@ function choisirChemin(choix) {
         }
     }else if(etape === 18){
         if (choix === "oui"){
-            document.getElementById('scenario').innerText = "Serais-tu prêt à sacrifier la vie de tes proches pour ton Etat ?";
+            document.getElementById('scenario').innerText = "";
+            type("Serais-tu prêt à sacrifier la vie de tes proches pour ton Etat ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "Oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "Non";
@@ -338,7 +403,8 @@ function choisirChemin(choix) {
         }
     }else if(etape === 19){
         if (choix === "oui"){
-            document.getElementById('scenario').innerText = "Tu t'engageras à simuler ta mort pour le bien de l'Etat ?";
+            document.getElementById('scenario').innerText = "";
+            type("Tu t'engageras à simuler ta mort pour le bien de l'Etat ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "Oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "Non";
@@ -351,7 +417,8 @@ function choisirChemin(choix) {
         }
     }else if(etape === 21){
         if (choix === "oui"){
-            document.getElementById('scenario').innerText = "Tu t'engageras à accomplir les missions qui te seront confiées sans broncher ?";
+            document.getElementById('scenario').innerText = "";
+            type("Tu t'engageras à accomplir les missions qui te seront confiées sans broncher ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "Oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "Non";
@@ -364,7 +431,8 @@ function choisirChemin(choix) {
         }
     }else if(etape === 22){
         if (choix === "oui"){
-            document.getElementById('scenario').innerText = "Tu t'engageras à ne jamais réfuter les ordres de l'Etat même si certain peuvent être immoraux ?";
+            document.getElementById('scenario').innerText = "";
+            type("Tu t'engageras à ne jamais réfuter les ordres de l'Etat même si certain peuvent être immoraux ?","scenario")
             document.getElementsByTagName('button')[0].innerText = "Oui";
             document.getElementsByTagName('button')[0].setAttribute('onclick', 'choisirChemin("oui")');
             document.getElementsByTagName('button')[1].innerText = "Non";
@@ -388,7 +456,11 @@ function fin(resultat) {
     if(resultat === "1"){
         window.location.href = "fin/fin1/fin1.html"
     }else if (resultat === "2") {
-        document.getElementById('scenario').innerText = "Recruté";
+        document.getElementById('scenario').innerText = "";
+        type("Bravo tu as réussi le test, tu vas recevoir des instructions par mail pour ta validation.", "scenario");
+        setTimeout(function(){
+            window.location.href = "fin/fin2/fin2.html"
+        }, 10000);
     }else if (resultat === "3") {
         document.getElementById('scenario').innerText = "Veritable identité de l'assasin ";
     }else if (resultat === "4") {
