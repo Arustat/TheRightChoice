@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mail-box</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="style_mail.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+<div class="container">
+  <div class="sidebar">
+    <div class="user">
+        <div class="img">
+            <img src="access/icon_mail/cadavre.png" alt="img">
+          </div>
+        <h1>Christophe Giovanna</h1>
+        <p>help_joahn@1976.com</p>
+    </div>
+    <div class="compose">
+      <button type="button">Compose</button>
+    </div>
+  
+    <div class="labels">
+      <h2>LABELS</h2>
+      <ul>
+          <li><i class="fas fa-envelope"></i> All Mail</li>
+          <li><i class="fas fa-inbox"></i> Inbox</li>
+          <li><i class="fas fa-exclamation-circle"></i> Important</li>
+          <li><i class="fas fa-check"></i> Already Read</li>
+      </ul>
+    </div>
+  </div>
+    <div class="header">
+      <div class="inbox_header">
+        <h1><i class="fas fa-inbox"></i>Inbox</h1>
+        <div class="search-bar">
+            <input type="text" id="search" name="search" placeholder="Search Mail">
+            <button type="button" onclick="clue();">Search</button>
+        </div>
+      </div>
+        <div class="table-content">
+          <div class="table-responsive">
+            <table class="table">
+              <tbody><tr onclick="openEmail(this)">
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">Walter Park</a></td>
+                <td class="subject"><a href="#">.. -- .--. --- .-. - .- -. - </a></td>
+                <td class="time">15:00 </td>
+              </tr>
+              <tr onclick="openEmail2(this)">
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">Haly Britman</a></td>
+                <td class="subject"><a href="#">Rapport d'enquête sur la disparition de Melanie Bart</a></td>
+                <td class="time">10:30</td>
+              </tr>
+              <tr>
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">Lucas Hernandez</a></td>
+                <td class="subject"><a href="#">Analyse des preuves dans l'affaire du vol de bijoux à la galerie d'art</a></td>
+                <td class="time">09:45</td>
+            </tr>
+            <tr>
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">Isabella Nguyen</a></td>
+                <td class="subject"><a href="#">Interrogatoire du principal suspect dans l'incident de vol de données</a></td>
+                <td class="time">13:20</td>
+            </tr>
+            <tr>
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">Raj Patel</a></td>
+                <td class="subject"><a href="#">Recherche de témoins dans l'affaire du délit de fuite</a></td>
+                <td class="time">11:00</td>
+            </tr>
+            <tr>
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">Elena Vargas</a></td>
+                <td class="subject"><a href="#">Examen de la scène du crime dans l'enquête sur l'incendie criminel</a></td>
+                <td class="time">14:55</td>
+            </tr>
+            <tr>
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">Maximilian Fischer</a></td>
+                <td class="subject"><a href="#">Écoute de conversations pour élucider l'affaire de fraude financière</a></td>
+                <td class="time">10:05</td>
+            </tr>
+            <tr>
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">Ava Thompson</a></td>
+                <td class="subject"><a href="#">Analyses balistiques pour résoudre le meurtre du baron local</a></td>
+                <td class="time">12:30</td>
+            </tr>            
+            </tbody></table>
+          </div>
+          <div class="email-content">
+            <button type="button" class="close" onclick="openEmail(this)"><i class="fa fa-times"></i></button>
+            <h2>Urgent</h2>
+            <p class="expediteur">Expéditeur: agent_walter@gouv.fr</p>
+            <p>Date: 7 décembre 2023</p>
+            <p>
+              Monsieur Giovanna,<br><br>
+
+Nous vous informons par la présente que vous avez été sélectionné pour une possible intégration au sein de notre unité expérimentale au sein de la Direction Générale de la Sécurité Extérieure (DGSE).<br><br> Cependant, cette sélection ne constitue pas une garantie d'intégration définitive.<br><br>
+
+Votre admission à cette unité dépendra de votre performance dans une série de tests rigoureux conçus pour évaluer vos compétences et votre adéquation au poste requis.<br><br> Ces épreuves, disponibles sur un site sécurisé, seront déterminantes pour votre éligibilité finale.<br><br>
+
+Il est crucial de souligner que cette phase de test est cruciale pour déterminer votre admissibilité. Tout manquement ou résultat insatisfaisant pourra impacter votre candidature.<br><br>
+
+Veuillez suivre strictement les instructions fournies sur le site web et effectuer ces évaluations dans les délais impartis. Aucune dérogation à ces conditions ne pourra être accordée.<br><br>
+
+Nous vous prions de considérer cette étape avec sérieux et engagement.<br><br> Votre intégration au sein de notre unité expérimentale ne pourra être confirmée qu'à l'issue de ces épreuves.<br><br>
+
+Nous vous remercions pour votre compréhension et coopération.<br><br>
+
+Cordialement,<br><br>
+Numéro d'agent : 007AD65P<br><br>
+<a href="game_entrance.html" target="_blank"><i class="fa-solid fa-share-from-square"></i>Test</a>
+            </p>
+          </div>
+          <div class="email-content1">
+            <button type="button" class="close" onclick="openEmail2(this)"><i class="fa fa-times"></i></button>
+            <h2>Urgent</h2>
+            <p class="expediteur">Expéditeur: haly_britman@gna.fr</p>
+            <p>Date: 7 décembre 2023</p>
+            <p>
+              Bonjour Mr Giovanna,<br><br>
+              Suite à la demande de l'agent Walter pour votre intégration dans le groupe de recherche sur l'affaire  du Serial-Killer à la hache,<br><br> je vous transmet l'historique de l'affaire.<br><br>
+              Cordialement,<br><br>
+              Haly Britman<br><br><hr>
+              <a download="rapport_enquete.zip" target="_blank" href="indice_enquête/RedKiller.pdf">rapport_enquete</a><br><br>
+            </p>
+          </div>
+          </div>
+            <ul class="pagination">
+              <li class="disabled"><a href="#">«</a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+<script>
+  // Récupérer l'élément body
+const body = document.querySelector('body');
+
+// Dès que l'animation est terminée, ajouter la classe 'animation-finished' à body
+document.querySelector('body::before').addEventListener('animationend', function() {
+    body.classList.add('animation-finished');
+});
+
+  function openEmail(element) {
+    const emailContent = document.querySelector('.email-content');
+    emailContent.style.display = (emailContent.style.display === 'none') ? 'block' : 'none';
+  }
+  function openEmail2(element) {
+    const emailContent = document.querySelector('.email-content1');
+    emailContent.style.display = (emailContent.style.display === 'none') ? 'block' : 'none';
+  }
+  function clue() {
+    var input = document.getElementById("search").value;
+    if (input === "help_joahn@1976.com") {
+        const fakeData = "Contenu du fichier fictif";
+        const fakeFileName = "/indice_enquête/rapport_enquete.zip";
+        downloadFile(fakeData, fakeFileName, 'zip/plain');
+    }
+}
+
+function downloadFile(data, name, type) {
+    const anchor = document.createElement('a');
+    anchor.href = window.URL.createObjectURL(new Blob([data], { type }));
+    anchor.download = name;
+    anchor.click();
+}
+
+</script>
+</body>
+</html>

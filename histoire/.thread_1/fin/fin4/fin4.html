@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mail-box</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="fin4.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <button id="exit">Exit</button>
+  <script>
+    const button = document.querySelector('button');
+    button.addEventListener('click', event => {
+      window.location.href = '../../../../index.html';
+    });
+    function showExit() {
+      document.getElementById("exit").style.animation = "showExit 1s";
+      document.getElementById("exit").style.display = "block";
+    }
+    setTimeout(showExit, 4000);
+  </script>
+<div class="container">
+  <div class="sidebar">
+    <div class="user">
+        <div class="img">
+            <img src="C:\Users\PC\Documents\Ynov\TheRightChoice\TheRightChoice\histoire\.thread_1\fin\fin1\img\christ.jpg" alt="img">
+          </div>
+        <h1>Christophe Giovanna</h1>
+        <p>Christophe.Gi@gmail.com</p>
+    </div>
+    <div class="compose">
+      <button type="button" id="Compose" onclick="Compose()">Compose</button>
+    </div>
+  
+    <div class="labels">
+      <h2>LABELS</h2>
+      <ul>
+          <li><i class="fas fa-envelope"></i> All Mail</li>
+          <li><i class="fas fa-inbox"></i> Inbox</li>
+          <li><i class="fas fa-exclamation-circle"></i> Important</li>
+          <li><i class="fas fa-check"></i> Already Read</li>
+      </ul>
+    </div>
+  </div>
+    <div class="header">
+      <div class="inbox_header">
+        <h1><i class="fas fa-inbox"></i>Inbox</h1>
+        <div class="search-bar">
+            <input type="text" id="search" name="search" placeholder="Search Mail">
+            <button type="button" onclick="clue();">Search</button>
+        </div>
+      </div>
+        <div class="table-content">
+          <div class="table-responsive">
+            <table class="table">       
+              <tbody>     
+            </tbody></table>
+          </div>
+          <div class="compose_content" style="display: none;">
+            <button type="button" class="close"><i class="fa fa-times"></i></button>
+            <h2>Objet: Urgent</h2>
+            <p class="expediteur">CC: newspapers@gmail.com</p>
+            <p>Date: 7 décembre 2023</p>
+            <p id="text_pour_info"></p>
+            <button type="button" id="valider" onclick="fade()">Valider</button>
+          </div>
+          </div>
+            <ul class="pagination">
+              <li class="disabled"><a href="#">«</a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+<script>
+    // Récupérer l'élément body
+  const body = document.querySelector('body');
+
+  // Dès que l'animation est terminée, ajouter la classe 'animation-finished' à body
+  document.querySelector('body::before').addEventListener('animationend', function() {
+      body.classList.add('animation-finished');
+  });
+  const compose = document.getElementById('compose');
+  function Compose(element) {
+    const composeContent = document.querySelector('.compose_content');
+    composeContent.style.display ='block';
+    const messages = [
+    "Chers New York Times,",
+    "Ce message est un appel à l'aide urgent et crucial pour notre survie collective. Je m'appelle Giovanna, et je suis actuellement dans une situation où ma vie est en danger, mais c'est la vie de chacun d'entre nous qui est menacée.",
+    "Je suis accusé à tort de meurtres en série perpétrés par un individu nommé RedKiller. Cependant, la réalité est bien différente. Derrière ces actes se cachent en réalité l'Etat lui-même dont l'objectif est l'extermination de la population.",
+    "Notre Etat agit dans l'ombre, menant un projet machiavélique visant à éliminer des masses de personnes. Les preuves de leur existence et de leurs actions se trouvent dissimulées dans des endroits que je ne peux malheureusement pas divulguer par ce moyen.",
+    "Mon arrestation imminente par des agents ne fait que confirmer leurs efforts pour étouffer la vérité. Ils sont prêts à tout pour cacher leur sinistre dessein. C'est pourquoi je m'adresse à vous, afin que cette information cruciale ne soit pas enterrée avec moi.",
+    "Je vous en conjure, ne prenez pas ces paroles à la légère. Il est de la plus haute importance que vous cherchiez la vérité derrière les événements qui se déroulent actuellement. C'est la vie de chacun d'entre nous qui est en jeu.",
+    "Je suis conscient que cela peut paraître incroyable voire inimaginable, mais je vous en supplie, ne sous-estimez pas la menace qui pèse sur nous. Il est temps de se mobiliser, de chercher la vérité et d'agir ensemble pour contrer notre gouvernement avant qu'il ne soit trop tard.",
+    "Faites circuler cette information, informez les autorités, les médias, toute personne qui peut contribuer à révéler cette conspiration.",
+    "Le temps presse. Notre survie en dépend."
+  ];
+  afficherMessages(messages);  
+  }
+
+  function afficherMessages(messages) {
+    document.body.classList.add('cursor-typing');
+    const typewriterDelay = 10;
+    let messageIndex = 0;
+  
+    function afficherLettres(index) {
+      const messageElement = document.getElementById('text_pour_info');
+      const message = messages[index];
+      let lettreIndex = 0;
+  
+      function afficherLettre() {
+        if (lettreIndex < message.length) {
+          messageElement.innerHTML += message[lettreIndex];
+          lettreIndex++;
+          setTimeout(afficherLettre, typewriterDelay);
+        } else {
+          messageElement.innerHTML += '<br>'; // Ajouter un retour à la ligne après chaque message
+          messageIndex++;
+          if (messageIndex < messages.length) {
+            setTimeout(() => {
+              afficherLettres(messageIndex); // Afficher le message suivant
+            }, typewriterDelay * 10); // Délai avant d'afficher le prochain message
+          } else {
+            document.body.classList.remove('cursor-typing');
+            document.getElementById('valider').style.display = 'block';          }
+        }
+      }
+      afficherLettre();
+    }
+    afficherLettres(messageIndex);
+  }
+  function hideExit() {
+    document.getElementById("exit").style.animation = "showExit 1s";
+    document.getElementById("exit").style.display = "none";
+  }
+  function fade() {
+    document.body.classList.add('opacity-zero');
+    document.body.classList.add('animation-start');
+    setTimeout(hideExit, 1000);
+    setTimeout(() => {
+      window.location.href = '../fin1/fin1.html';
+    }, 5000);
+
+  }
+</script>
+</body>
+</html>

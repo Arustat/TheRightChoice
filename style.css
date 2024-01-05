@@ -67,9 +67,8 @@ body{
 
 .VHS{
     position: fixed;
-    right: 30px;
+    right: 5px;
     top: 0px;
     color: aliceblue;
     font-size: 20px;
 }
-

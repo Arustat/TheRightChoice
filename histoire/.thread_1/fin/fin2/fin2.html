@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mail-box</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="fin2.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+  <button id="exit">Exit</button>
+  <script>
+    const button = document.querySelector('button');
+    button.addEventListener('click', event => {
+      window.location.href = '../../../../index.html';
+    });
+    function showExit() {
+      document.getElementById("exit").style.animation = "showExit 1s";
+      document.getElementById("exit").style.display = "block";
+    }
+    setTimeout(showExit, 4000);
+  </script>
+<div class="container">
+  <div class="sidebar">
+    <div class="user">
+        <div class="img">
+            <img src="img/export_r2nvzfnshb98u-5de664-0@1x.jpeg" alt="img">
+          </div>
+        <h1>Joahn Waler</h1>
+        <p>agent19176@gouv.com</p>
+    </div>
+    <div class="compose">
+      <button type="button">Compose</button>
+    </div>
+  
+    <div class="labels">
+      <h2>LABELS</h2>
+      <ul>
+          <li><i class="fas fa-envelope"></i> All Mail</li>
+          <li><i class="fas fa-inbox"></i> Inbox</li>
+          <li><i class="fas fa-exclamation-circle"></i> Important</li>
+          <li><i class="fas fa-check"></i> Already Read</li>
+      </ul>
+    </div>
+  </div>
+    <div class="header">
+      <div class="inbox_header">
+        <h1><i class="fas fa-inbox"></i>Inbox</h1>
+        <div class="search-bar">
+            <input type="text" id="search" name="search" placeholder="Search Mail">
+            <button type="button" onclick="clue();">Search</button>
+        </div>
+      </div>
+        <div class="table-content">
+          <div class="table-responsive">
+            <table class="table">
+                
+              <tbody><tr onclick="openEmail(this)" id="one">
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">Bot Intégration</a></td>
+                <td class="subject"><a href="#">Bravo</a></td>
+                <td class="time">15:00 </td>
+              </tr>
+              <tr onclick="openEmail(this)" id="two">
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">Walter Park</a></td>
+                <td class="subject"><a href="#">Recrutement</a></td>
+                <td class="time">12:30</td>
+            </tr>    
+              <tr>
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">H@ùa aepleds
+                </a></td>
+                <td class="subject"><a href="#">kdr leler</a></td>
+                <td class="time">10:30</td>
+              </tr>
+              <tr>
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">    </a></td>
+                <td class="subject"><a href="#">fd fdfzz e6sq5dqsd</a></td>
+                <td class="time">09:45</td>
+            </tr>
+            <tr>
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">ù azazdééô ds</a></td>
+                <td class="subject"><a href="#"> sqs fldmfsdm zôez</a></td>
+                <td class="time">13:20</td>
+            </tr>
+            <tr>
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">         </a></td>
+                <td class="subject"><a href="#">@ad ssù$ée z6zeds </a></td>
+                <td class="time">11:00</td>
+            </tr>
+            <tr>
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">aùze aa</a></td>
+                <td class="subject"><a href="#">Exzmlj ezfdms sldmzp msdmss</a></td>
+                <td class="time">14:55</td>
+            </tr>
+            <tr>
+                <td class="action"><input type="checkbox" /></td>
+                <td class="action"><i class="fa fa-star"></i></td>
+                <td class="action"><i class="fa fa-bookmark"></i></td>
+                <td class="name"><a href="#">              </a></td>
+                <td class="subject"><a href="#">fdld^p ùsùmsdls 2sù</a></td>
+                <td class="time">10:05</td>
+            </tr>        
+            </tbody></table>
+          </div>
+          <div class="email-content">
+            <button type="button" class="close" onclick="openEmail(this)"><i class="fa fa-times"></i></button>
+            <h2>Urgent</h2>
+            <p class="expediteur">Expéditeur: bot@gouv.fr</p>
+            <p>Date: 1 décembre 2023</p>
+            <p>
+              Monsieur Giovanna,<br><br>
+
+              Nous avons le plaisir de vous informer que suite à l'évaluation rigoureuse de vos compétences et performances au cours des tests, vous avez été sélectionné pour rejoindre notre unité expérimentale au sein de la Direction Générale de la Sécurité Extérieure (DGSE).<br><br>Votre remarquable performance et votre adéquation au poste requis ont été déterminantes dans notre décision de vous accueillir au sein de notre équipe.<br><br>
+              Nous tenons à vous féliciter pour votre engagement et votre sérieux tout au long de cette phase cruciale d'évaluation.<br><br>Votre intégration officielle au sein de notre unité sera confirmée par le biais des prochaines étapes administratives. Nous vous contacterons prochainement pour vous fournir tous les détails nécessaires à votre intégration. <br><br>
+              Nous vous remercions pour votre dévouement et votre coopération tout au long de ce processus de sélection.<br><br>
+
+              Félicitations et bienvenue au sein de notre équipe.<br><br>
+              Cordialement,<br><br>
+              Vous êtes désormais sous le contrôle total du gouvernement. Votre corps et votre esprit seront dédiés obligatoirement à l'État.<br><br>
+            </p>
+          </div>
+          <div class="email-content1">
+            <button type="button" class="close" onclick="openEmail2(this)"><i class="fa fa-times"></i></button>
+            <h2>Urgent</h2>
+            <p class="expediteur">Expéditeur: haly_britman@gna.fr</p>
+            <p>Date: 7 décembre 2023</p>
+            <p>
+              Bonjour Mr Giovanna,<br><br>
+              Suite à la demande de l'agent Walter pour votre intégration dans le groupe de recherche sur l'affaire  du Serial-Killer à la hache,<br><br> je vous transmet l'historique de l'affaire.<br><br>
+              Cordialement,<br><br>
+              Haly Britman<br><br><hr>
+              <a download="rapport_enquete.zip" target="_blank" href="indice_enquête/RedKiller.pdf">rapport_enquete</a><br><br>
+            </p>
+          </div>
+          </div>
+            <ul class="pagination">
+              <li class="disabled"><a href="#">«</a></li>
+              <li class="active"><a href="#">1</a></li>
+              <li><a href="#">2</a></li>
+              <li><a href="#">3</a></li>
+              <li><a href="#">4</a></li>
+              <li><a href="#">5</a></li>
+              <li><a href="#">»</a></li>
+            </ul>
+        </div>
+    </div>
+    
+</div>
+<script>
+  // Récupérer l'élément body
+const body = document.querySelector('body');
+
+// Dès que l'animation est terminée, ajouter la classe 'animation-finished' à body
+document.querySelector('body::before').addEventListener('animationend', function() {
+    body.classList.add('animation-finished');
+});
+
+  function openEmail(element) {
+    const emailContent = document.querySelector('.email-content');
+    emailContent.style.display = (emailContent.style.display === 'none') ? 'block' : 'none';
+  }
+  function openEmail2(element) {
+    const emailContent = document.querySelector('.email-content1');
+    emailContent.style.display = (emailContent.style.display === 'none') ? 'block' : 'none';
+  }
+
+</script>
+</body>
+</html>

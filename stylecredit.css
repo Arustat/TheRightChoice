@@ -1,0 +1,78 @@
+@font-face {
+    font-family: "VCR OSD Mono";
+    src: url('typos/typo.ttf');
+}
+
+body{
+    font-family: "VCR OSD Mono";
+    background-color:black;
+    color:lightgrey;
+    overflow:hidden;
+    background-image: url("https://68.media.tumblr.com/595a5fa01fe53ca0e4ca8f37bacc849d/tumblr_nve67mJtue1tanofjo1_500.gif");
+    background-size:cover;
+    margin:0;
+    text-shadow: black 2px 2px 1px, black -2px 2px 1px, black -2px -2px 1px, black 2px -2px 1px, black 0px 2px 1px, black 0px -2px 1px, black 2px 0px 1px, black -2px 0px 1px;
+    
+}
+
+h2 {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4em;
+    padding: 20px 0;
+    text-decoration: underline;
+}
+
+h1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 60px); /* Adjusted to account for the h2 element */
+    margin: 120px 0 0 0; /* Added margin to move h1 down */
+    position: relative;
+    overflow: hidden;
+    animation: fadeIn 2s ease-in-out 1;
+    animation-fill-mode: forwards;
+}
+
+h1 span {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+h2, h1 {
+    animation: flicker 2s infinite;
+}
+
+.backButton {
+    position: absolute;
+    top: 15px;
+    left: 22px;
+}
+
+.backButton a {
+    color:aliceblue;
+    font-size: 27px;
+}
+
+a:hover{
+    cursor: pointer;
+    background-color:lightgrey;
+}
+
+h2, h1, .backButton a {
+    animation: fadeIn 2s ease-in-out 1;
+}

@@ -4,6 +4,7 @@ function agrandir(nomdiv, thread) {
     img.classList.add('agrandie');
 
     setTimeout(function() {
-      window.location.href = 'histoire/thread_1/' + thread;
+      window.location.href = 'histoire/' + nomdiv  + '/'+ thread;
     }, 2000);
 }
+

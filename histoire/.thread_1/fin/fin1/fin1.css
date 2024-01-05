@@ -1,0 +1,183 @@
+body {
+  display: flex;
+  height: 100vh;
+  margin: 0;
+  background-color: black;
+  overflow: hidden;
+}
+
+.black-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0); /* Fond initial transparent */
+  transition: background-color 3s ease; /* Transition pour le fond */
+}
+
+/* Classe pour afficher la superposition noire */
+.black-overlay.active {
+  background-color: rgba(0, 0, 0, 1); /* Fond noir opaque */
+}
+
+
+.jumpscare {
+    display: none;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+}
+
+.jumpscare img {
+    width: 100%;
+    height: 100%;
+    margin-top: 5vh;
+}
+
+
+.shake {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both; 
+  /*contrôle l'accéleration de l'animation cubic-bezier*/
+  animation: flash 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+
+@keyframes flash {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-12px, 0, 0); /*va vers la gauche*/
+  }
+  
+  20%, 80% { 
+    transform: translate3d(13px, 0, 0); /*va vers la droite*/
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-20px, 0, 0); /*va vers la gauche*/
+  }
+
+  40%, 60% {
+    transform: translate3d(20px, 0, 0); /*va vers la droite*/
+  }
+}
+
+.fade-out{
+  animation: fadeOut ease 1s;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity:1;
+  }
+  100% {
+    opacity:0;
+  }
+}
+
+.memorial {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+  width: 100vw;
+  height: 100vh;
+}
+
+.memorial img {
+  z-index: 10000;
+  position: relative;
+  display: block;
+  width: 20%;
+  margin: auto;
+  box-shadow: 2px 2px 2px 2px rgba(0.2, 0.2, 0.2, 0.2);
+  border-radius: 20%;
+}
+
+.memorial img{
+	filter: blur(0);
+}
+
+.memorial img:hover{
+	filter: blur(3px);
+}
+
+
+.top{
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 50vh;
+  background-color: rgb(45, 61, 110);
+}
+
+.top h1{
+  color: white;
+  font-size: 5vw;
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+
+.top h2{
+  font-size: 20px;
+  text-align: center;
+}
+
+.memorial h4{
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  font-size: 18px;
+  text-align: center;
+}
+
+
+@keyframes slideInLeft{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(100%);
+  }
+}
+
+.memorial img{
+  animation: none;
+}
+
+.cacher{
+  position: absolute;
+  display: none;
+  z-index: 9999;
+  width: 20%;
+  margin: auto;
+  background-color: black;
+  border-radius: 20%;
+  color: white;
+  font-size: 12px;
+}
+
+.cacher p{
+  position: relative;
+  width: 90%;
+  margin: auto;
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 8vh;
+}

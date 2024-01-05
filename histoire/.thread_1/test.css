@@ -1,0 +1,47 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #000000;
+    overflow: hidden;
+}
+
+#histoire {
+    text-align: center;
+    max-width: auto;
+    padding: 20px;
+    border: 1px solid #505050;
+    border-radius: 5px;
+    background-color: #000000;
+}
+
+#scenario {
+    color: #ffffff;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #ffffff;
+    color: #000000;
+}
+
+button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+#victimImg{
+    display: block;
+    margin: auto;
+    max-width: 100%;
+}

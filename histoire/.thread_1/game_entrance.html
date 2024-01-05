@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>entrance</title>
+    <link rel="'icon" href='../../icon.png'/>
+    <link rel="stylesheet" href="game_entrance.css"/>
+</head>
+<body>
+    <div class="msg"></div>
+    <div id="console"></div>
+    <script>
+        
+        const console = document.getElementById("console");
+        const msg = document.querySelector(".msg");
+
+        const txt = [
+        "FORCE: XX0022. ENCYPT://000.222.2345",
+        "TRYPASS: ********* AUTH CODE: ALPHA GAMMA: 1___ PRIORITY 1",
+        "RETRY: REINDEER FLOTILLA",
+        "Z:> /FALKEN/GAMES/TICTACTOE/ EXECUTE -PLAYERS 0",
+        "================================================",
+        "Priority 1 // local / scanning...",
+        "scanning ports...",
+        "BACKDOOR FOUND (23.45.23.12.00000000)",
+        "BACKDOOR FOUND (13.66.23.12.00110000)",
+        "BACKDOOR FOUND (13.66.23.12.00110044)",
+        "...",
+        "...",
+        "BRUTE.EXE -r -z",
+        "...locating vulnerabilities...",
+        "...vulnerabilities found...",
+        "MCP/> DEPLOY CLU",
+        "SCAN: __ 0100.0000.0554.0080",
+        "SCAN: __ 0020.0000.0553.0080",
+        "SCAN: __ 0001.0000.0554.0550",
+        "SCAN: __ 0012.0000.0553.0030",
+        "SCAN: __ 0100.0000.0554.0080",
+        "SCAN: __ 0020.0000.0553.0080",
+        ]
+
+        function updateScreen() {
+            // Clear console
+            console.innerHTML = '';
+        
+            txt.push(txt.shift());
+            txt.forEach(e => console.innerHTML += `<p>${e}</p>`);
+        }
+        
+        // Set interval to update screen every 200ms
+        setInterval(updateScreen, 200);
+                
+        // Set timeout to change message style after 5s
+        setTimeout(() => {
+            msg.style.background = "limegreen";
+            msg.innerHTML = "ACCESS GRANTED";
+            msg.style.boxShadow = "0 0 30px limegreen";
+            console.style.display = "none";
+        }, 5000);
+
+        // Set timeout to redirect after 7s
+        setTimeout(() => window.location.href = "game_thread1.html", 7000);
+    </script>
+</body>
+</html>
