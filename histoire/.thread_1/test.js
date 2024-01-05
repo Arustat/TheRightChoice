@@ -296,7 +296,7 @@ function choisirChemin(choix) {
             document.getElementsByTagName('button')[1].setAttribute('onclick', 'choisirChemin("non")');
             document.getElementsByTagName('button')[0].style.display = "inline";
             document.getElementsByTagName('button')[1].style.display = "inline";
-            etape = 12;
+            etape = 16;
         }else if(choix === "non"){
             document.getElementById('scenario').innerText = "";
             type("Penses-tu qu'elle te veux du mal ?","scenario")
@@ -358,7 +358,7 @@ function choisirChemin(choix) {
         }
     }else if(etape == 13){
         if (choix === "oui"){
-            document.getElementById('scenario').innerText = "Kdo je červený vrah ?";
+            document.getElementById('scenario').innerText = "";
             type("Kdo je červený vrah ?","scenario")
             let input_fin = document.createElement('input');
             input_fin.setAttribute('type', 'password');
@@ -462,9 +462,17 @@ function fin(resultat) {
             window.location.href = "fin/fin2/fin2.html"
         }, 10000);
     }else if (resultat === "3") {
-        document.getElementById('scenario').innerText = "Veritable identité de l'assasin ";
+        document.getElementById('scenario').innerText = "";
+        type("...", "scenario");
+        setTimeout(function(){
+            window.location.href = "fin/fin3/fin3.html"
+        }, 2000);
     }else if (resultat === "4") {
-        document.getElementById('scenario').innerText = "Secret d'Etat";
+        document.getElementById('scenario').innerText = "";
+        type("CITIZEN IS NO LONGER UNDER THE CONTROL OF THE STATE. ELIMINATION REQUESTED.", "scenario");
+        setTimeout(function(){
+            window.location.href = "fin/fin4/fin4.html"
+        }, 5000);
     }
     const boutons = document.getElementsByTagName('button');
     for (let i = boutons.length - 1; i >= 0; i--) {

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Story</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        #story {
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 20px;
+            margin: 15px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="Texte">
+        <p id="Texte_affiché"></p>
+        <button id="1"></button>
+        <button id="2"></button>
+    </div>
+
+    <script>
+        // Fonction d'affichage
+        function CreepyMonitor(T) {
+            document.getElementById("Texte_affiché").innerHTML = T;
+        }
+
+        // Textes de l'arborescence
+        var T1 = "Bonjour. Je vais vous raconter l'histoire de Grandesel et Bretel. Tu connais ?";
+        var T2 = "Peu importe. Ils se baladaient sur Internet, tout comme toi.";
+        var T3 = "Ils voulaient satisfaire leur soif de curiosité, tout comme toi.";
+        var T31 = "Si tu es curieux, oui.";
+        var T311 = "Parce que ceci. Bien cordialement, à bientôt pour une nouvelle histoire.";
+        var T312 = "Bien mon enfant. Mais ce n'est pas fini.";
+        var T3121 = "Maintenant, on peut se dire au revoir. À bientôt pour une nouvelle histoire.";
+        var T32 = "Tu n'aimeras pas le troisième.";
+        var T321 = "Ah ? Très bien ... Alors bon vent.";
+        var T3211 = "À bientôt pour une nouvelle histoire.";
+        var T322 = "Oh non... dix excuses-moi, cent désolé, et mille pardons.";
+        var T3221 = "... et mes condoléances.";
+        var T32211 = "Pour le troisième point commun. À bientôt pour une nouvelle histoire.";
+
+        // Initialisation avec le premier texte
+        CreepyMonitor(T1);
+
+        // Fonctions appelées lors du clic sur les boutons
+        function Oui() {
+            CreepyMonitor(T2);
+            document.getElementById("1").innerHTML = "Ah ...";
+            document.getElementById("2").innerHTML = "Chouette ! Un point commun !";
+            document.getElementById("1").addEventListener("click", Ah);
+            document.getElementById("2").addEventListener("click", Chouette);
+        }
+
+        function Non() {
+            CreepyMonitor(T2);
+            document.getElementById("1").innerHTML = "Ah ...";
+            document.getElementById("2").innerHTML = "Chouette ! Un point commun !";
+            document.getElementById("1").addEventListener("click", Ah);
+            document.getElementById("2").addEventListener("click", Chouette);
+        }
+
+        function Ah() {
+            CreepyMonitor(T3);
+            document.getElementById("1").innerHTML = "... dois-je m'inquiéter ?";
+            document.getElementById("2").innerHTML = "Houra ! Un deuxième point commun !";
+            document.getElementById("1").addEventListener("click", inquieter);
+            document.getElementById("2").addEventListener("click", Houra);
+        }
+
+        function Chouette() {
+            CreepyMonitor(T3);
+            document.getElementById("1").innerHTML = "... dois-je m'inquiéter ?";
+            document.getElementById("2").innerHTML = "Houra ! Un deuxième point commun !";
+            document.getElementById("1").addEventListener("click", inquieter);
+            document.getElementById("2").addEventListener("click", Houra);
+        }
+
+        function inquieter() {
+            CreepyMonitor(T31);
+            document.getElementById("1").innerHTML = "Pourquoi ?";
+            document.getElementById("2").innerHTML = "Non, pas curieux du tout. Jamais même.";
+            document.getElementById("1").addEventListener("click", Pourquoi);
+            document.getElementById("2").addEventListener("click", PasCurieux);
+        }
+
+        function Pourquoi() {
+            CreepyMonitor(T311);
+        }
+
+        function PasCurieux() {
+            CreepyMonitor(T312);
+            document.getElementById("1").innerHTML = "Si.";
+            document.getElementById("2").innerHTML = "Ah bon ?";
+            document.getElementById("1").addEventListener("click", Si);
+            document.getElementById("2").addEventListener("click", AhBon);
+        }
+
+        function Si() {
+            CreepyMonitor(T3121);
+        }
+
+        function AhBon() {
+            CreepyMonitor(T3121);
+        }
+
+        function Houra() {
+            CreepyMonitor(T32);
+            document.getElementById("1").innerHTML = "Même pas peur.";
+            document.getElementById("2").innerHTML = "Arrête, j'ai peur.";
+            document.getElementById("1").addEventListener("click", PasPeur);
+            document.getElementById("2").addEventListener("click", Arrête);
+        }
+
+        function PasPeur() {
+            CreepyMonitor(T321);
+            document.getElementById("1").innerHTML = "Aurevoir.";
+            document.getElementById("2").innerHTML = "ADIEU !";
+            document.getElementById("1").addEventListener("click", Aurevoir);
+            document.getElementById("2").addEventListener("click", ADIEU);
+        }
+
+        function Arrête() {
+            CreepyMonitor(T322);
+            document.getElementById("1").innerHTML = "Content";
+            document.getElementById("2")
+                .innerHTML = "Pas content";
