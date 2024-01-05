@@ -3,22 +3,66 @@
     src: url('/typos/typo.ttf');
 }
 
+
 .container {
     text-align: center;
 }
 
-body{
-    font-family: "VCR OSD Mono";
-    background-color:black;
-    color:lightgrey;
-    overflow:hidden;
-    background-size:cover;
-    margin:0;
-    text-shadow: black 2px 2px 1px, black -2px 2px 1px, black -2px -2px 1px, black 2px -2px 1px, black 0px 2px 1px, black 0px -2px 1px, black 2px 0px 1px, black -2px 0px 1px;
+body {
+    background-color: black;
     margin: 0;
     padding: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    overflow: hidden;
     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "VCR OSD Mono";
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+
+#background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('desk.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    animation: fadeIn 5s ease-in-out 1;
+    z-index: 1;
+    
+}
+
+#scrolling-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    line-height: 2; 
+    z-index: 2; 
+    animation: fadeIn 5s ease-in-out 1;
+}
+
+#scrolling-text p {
+    animation: marquee 26s linear infinite;
+    color: white;
+}
+
+@keyframes marquee {
+    0% { transform: translateY(1500%); }
+    100% { transform: translateY(-1500%); }
 }
