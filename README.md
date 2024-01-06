@@ -2,4 +2,4 @@
  
 Synopsys:
 
-Site internet d'horreur qui raconte des threads horreurs twitter.
+Site internet d'horreur qui raconte des histoires intéractives.
