@@ -1,4 +1,5 @@
-var audio = new Audio('access/audio/ambiance.mp3');
+var audio = new Audio('screamer.mp3');
+audio.autoplay = true;
 
 type("Vous allez débuter le test.", "scenario");
 
@@ -87,6 +88,7 @@ function next(choix) {
 }
 
 function start() {
+    audio.play();
     etape = 1;
     document.getElementById('scenario').innerText ="";
     type("Serais-tu prêt à consacrer ta vie pour une cause qui coûterait la vie de nombreux innocent ?","scenario");
@@ -455,6 +457,7 @@ function choisirChemin(choix) {
 }
 
 function fin(resultat) {
+    audio.pause();
     if(resultat === "1"){
         window.location.href = "fin/fin1/fin1.html"
     }else if (resultat === "2") {
